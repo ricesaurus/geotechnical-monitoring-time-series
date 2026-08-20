@@ -223,11 +223,11 @@ The comparison counts are in
 
 | Candidate | Product | Actual common window (fixed PST) | Exact common nonmissing timestamps | Recommendation |
 | --- | --- | --- | ---: | --- |
-| Middle core: `mid_R`, `mid_P1`, `mid_P2`, `mid_E2_B` | 15-minute | 2002-10-18 12:49 to 2018-09-24 14:25 | 422,084 | **Retain as primary.** Segment E2 and P1; do not cross resets or gaps. |
+| Middle core: `mid_R`, `mid_P1`, `mid_P2`, `mid_E2_B` | 15-minute | 2002-10-18 12:49 to 2018-09-24 14:25 | 519,695 | **Retain as primary.** Segment E2 and P1; do not cross resets or gaps. |
 | Middle core | daily | 2002-10-18 to 2018-09-24 | 5,616 | **Retain for initial cross-series structure.** |
-| Toe core pre-topple: `mid_R`, `toe_M1_A`, `toe_P7_B`, `toe_E5_C` | 15-minute | 2006-11-30 14:47 to 2017-03-15 23:53 | 2,567 | **Retain as secondary.** Cross-station clock phases sharply reduce exact joins. |
+| Toe core pre-topple: `mid_R`, `toe_M1_A`, `toe_P7_B`, `toe_E5_C` | 15-minute | 2006-11-30 14:47 to 2017-03-15 23:53 | 7,774 | **Retain as secondary.** Cross-station clock phases sharply reduce exact joins. |
 | Toe core pre-topple | daily | 2006-11-30 to 2017-03-15 | 3,603 | **Preferred initial toe comparison.** |
-| Later middle deep: `mid_R`, `mid_P5`, `mid_P6`, `mid_E2_B` | 15-minute | 2013-02-05 15:45 to 2018-09-24 13:25 | 103,361 | **Retain as secondary.** P5 is 19.27% blank within its regimes. |
+| Later middle deep: `mid_R`, `mid_P5`, `mid_P6`, `mid_E2_B` | 15-minute | 2013-02-05 15:45 to 2018-09-24 13:25 | 152,972 | **Retain as secondary.** P5 is 19.27% blank within its regimes. |
 | Later toe deep pre-topple: `mid_R`, `toe_M1_A`, `toe_P8_C`, `toe_P9_D`, `toe_E5_C` | daily | 2013-05-23 to 2017-03-01 | 1,297 | **Retain as event-focused secondary.** |
 | M1_B/P8_D/post-relocation E5 successor period | 15-minute | 2017-05-17 to 2017-09-25 | 0 | **Defer as primary.** Separate short regimes and middle/toe clock phases prevent an exact high-frequency join. |
 | M1_B/P8_D/post-relocation E5 successor period | daily | 2017-05-17 to 2017-09-25 | 131 | **Context only.** Too short and change-heavy for a primary record. |
