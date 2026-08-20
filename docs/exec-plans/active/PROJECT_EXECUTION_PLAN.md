@@ -2,7 +2,7 @@
 
 **Project:** California Landslide Monitoring Time-Series Analysis  
 **Primary intended site:** USGS Cleveland Corral, El Dorado County, California  
-**Active phase:** Phase 3 — exploratory structure and dynamics in progress
+**Active phase:** Phase 3 — complete; stopped before Phase 4
 
 **Last updated:** 2026-08-20
 
@@ -20,9 +20,12 @@ resources pass the committed checksum manifest, and the existing Phase 2 interim
 Parquet products are available for reproducible Phase 3 analysis. Implementation,
 tests, the complete reproduction workflow, 12 aggregate tables, nine inspected
 figures, an executed restart-and-run notebook, the Phase 3 report, and learning
-documentation are complete locally. Publication, draft-pull-request creation, and
-remote CI verification remain in progress. Forecasting, ARIMA/ARIMAX fitting,
-changepoint detection, interpolation, and causal claims remain out of scope.
+documentation are complete. Implementation commit
+`261371eed45013bdcb92dd9ff291b0c3b8dc6b6b` is published in verified draft pull
+request [#3](https://github.com/ricesaurus/geotechnical-monitoring-time-series/pull/3),
+and GitHub Actions `quality-checks` run `32363786311` completed successfully.
+Forecasting, ARIMA/ARIMAX fitting, changepoint detection, interpolation, and causal
+claims remain out of scope; Phase 4 has not started.
 
 Phase 2 began from verified `main` commit
 `bc0fc8eeaad584857aa92b390b4d1ab18b83250e`, which matched a freshly fetched
@@ -115,7 +118,7 @@ record length, and the engineering question support it.
 - [x] Reusable functions, synthetic-fixture tests, a build script, output validation,
   aggregate-only tables, inspected figures, an executed notebook, report, README, data
   documentation, learning notes, and this plan are complete.
-- [ ] The audited branch is pushed, exactly one verified draft PR targets `main`, and
+- [x] The audited branch is pushed, exactly one verified draft PR targets `main`, and
   the final commit's GitHub Actions result is confirmed successful.
 - [x] Phase 4 has not started.
 
@@ -135,8 +138,7 @@ record length, and the engineering question support it.
 
 ## Remaining Phase 3 work
 
-- Audit the complete diff and tracked scope, run all checks, commit and push the branch,
-  create one draft pull request, and confirm the final GitHub Actions result.
+None. Stop here; beginning Phase 4 requires a new assignment.
 
 ## Phase 2 acceptance criteria
 
