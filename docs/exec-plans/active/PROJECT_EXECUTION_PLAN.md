@@ -2,7 +2,7 @@
 
 **Project:** California Landslide Monitoring Time-Series Analysis  
 **Primary intended site:** USGS Cleveland Corral, El Dorado County, California  
-**Active phase:** Phase 1 — Cleveland Corral source and sensor audit in progress
+**Active phase:** Phase 1 — complete; stopped before Phase 2
 
 **Last updated:** 2026-08-20
 
@@ -16,10 +16,11 @@ Phase 1 began from verified `main` commit
 `origin/main` with a clean working tree. Work is isolated on
 `phase/1-source-audit`. The official USGS and ScienceBase metadata audit is documented,
 and its inventories identify 30 monitoring IDs across displacement, pressure head,
-precipitation/snowmelt, and volumetric water content. The preliminary decision is to
-proceed with a long middle-site set and a co-located toe subset. No measurement files
-have been downloaded and Phase 2 has not started. Repository checks pass; GitHub
-delivery remain before Phase 1 can be marked complete.
+precipitation/snowmelt, and volumetric water content. The decision is to proceed with a
+long middle-site set and a co-located toe subset, subject to Phase 2 file and continuity
+checks. Repository checks pass, the branch is pushed, and verified draft pull request
+[#1](https://github.com/ricesaurus/geotechnical-monitoring-time-series/pull/1)
+targets `main`. No measurement files have been downloaded and Phase 2 has not started.
 
 ### Phase 0 completion baseline
 
@@ -76,7 +77,7 @@ record length, and the engineering question support it.
 - [x] No measurement observation or archive has been downloaded or committed.
 - [x] The audit, learning notes, data documentation, README, and active plan reflect
   Phase 1 findings.
-- [ ] The feature branch is explicitly staged, committed, pushed, and submitted as one
+- [x] The feature branch is explicitly staged, committed, pushed, and submitted as one
   verified draft pull request to `main`.
 - [x] Phase 2 has not started.
 
@@ -96,6 +97,10 @@ record length, and the engineering question support it.
   credential-like content.
 - Kept measurement archives, quality control, ingestion, analysis, and modeling out of
   Phase 1.
+
+## Remaining Phase 1 work
+
+None. Stop here; beginning Phase 2 requires a new assignment.
 
 ## Phase 0 acceptance criteria
 
