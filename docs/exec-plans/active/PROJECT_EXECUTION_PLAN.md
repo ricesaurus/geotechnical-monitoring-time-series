@@ -21,8 +21,11 @@ are complete. The official raw resources are preserved locally and checksum-veri
 observation-bearing raw and interim data remain git-ignored. Reusable code, 12 tests,
 aggregate-only provenance/QC summaries, the Phase 2 report, and learning documentation
 are complete. The decision is to retain the middle core as primary and the segmented
-pre-topple toe set as secondary. Local publication validation passes; branch/PR/CI
-details will be recorded after publication. Phase 3 has not started.
+pre-topple toe set as secondary. Implementation commit
+`c0d6511400f0503059db70b52c6fc3e236371869` is published in verified draft pull
+request [#2](https://github.com/ricesaurus/geotechnical-monitoring-time-series/pull/2),
+and GitHub Actions `quality-checks` run `32353894013` completed successfully. Phase 3
+has not started.
 
 ### Phase 1 completion baseline
 
@@ -100,8 +103,8 @@ record length, and the engineering question support it.
   are deferred as primary records.
 - [x] The Phase 2 report, README, data documentation, learning notes, and active plan are
   updated; `scripts/check.ps1` and raw-manifest verification pass.
-- [ ] The audited branch is pushed, one verified draft PR is open to `main`, and its
-  GitHub Actions result is confirmed.
+- [x] The audited branch is pushed, one verified draft PR is open to `main`, and the
+  implementation commit's GitHub Actions result is confirmed successful.
 - [x] Phase 3 has not started.
 
 ## Completed Phase 2 work
@@ -122,11 +125,14 @@ record length, and the engineering question support it.
   date, 2013-05-23, while preserving the earlier metadata installation date.
 - Added aggregate-artifact safety validation and local raw-manifest verification that do
   not require network or raw data in ordinary CI.
+- Published implementation commit `c0d6511400f0503059db70b52c6fc3e236371869` on
+  `phase/2-ingestion-qc`, opened verified draft pull request
+  [#2](https://github.com/ricesaurus/geotechnical-monitoring-time-series/pull/2)
+  against `main`, and confirmed GitHub Actions run `32353894013` succeeded.
 
 ## Remaining Phase 2 work
 
-Publish the already validated branch, create one draft pull request, record its final
-commit and CI result here, and stop before Phase 3.
+None. Stop here; beginning Phase 3 requires a new assignment.
 
 ## Phase 1 acceptance criteria
 
