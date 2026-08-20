@@ -1,0 +1,18 @@
+parameter,value
+time_zone,fixed PST (UTC-08:00) year-round
+daily_alignment,exact local date; no interpolation
+level_mask,numeric timestamped rows inside documented operation and outside outages
+metadata_range_concerns,retained and counted; not automatically invalidated
+daily_interval_rain_minimum_coverage,90 of 96 nominal 15-minute intervals
+published_rain_difference,"consecutive eligible dates, same water year and regime, both daily semantics matched"
+displacement_difference,"consecutive eligible dates, same water year and installation segment; negatives retained"
+decomposition,robust STL on exact contiguous daily runs; periods 365 and 366
+stationarity,ADF with intercept/AIC lags plus KPSS level-stationarity/auto lags
+acf_pacf,"daily lags, maximum 60 or sample-size limit; approximate 1.96/sqrt(n) bands"
+daily_lag_range,0 through 30 days; positive means predictor leads response
+daily_uncertainty,"500-replicate moving-block bootstrap, up to 30-row blocks"
+event_selection,top 3 eligible daily interval-rain totals at least 7 days apart; no displacement input
+event_window,one day before through two days after the selected rain date
+event_alignment,one-to-one nearest; 8- and 15-minute tolerances; no reuse
+event_lag_range,0 through 48 hours in 15-minute steps; rain leads response
+synthetic_demo,"AR(1), MA(1), random walk; seed 170; never mixed with USGS data"

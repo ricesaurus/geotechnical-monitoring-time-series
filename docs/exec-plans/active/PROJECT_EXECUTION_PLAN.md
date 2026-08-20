@@ -2,7 +2,7 @@
 
 **Project:** California Landslide Monitoring Time-Series Analysis  
 **Primary intended site:** USGS Cleveland Corral, El Dorado County, California  
-**Active phase:** Phase 2 — complete; stopped before Phase 3
+**Active phase:** Phase 3 — exploratory structure and dynamics in progress
 
 **Last updated:** 2026-08-20
 
@@ -10,6 +10,19 @@ This is the single source of truth for current execution state. The project scop
 `docs/PROJECT_SPEC.md`; the long-term curriculum is in `docs/LEARNING_ROADMAP.md`.
 
 ## Actual current state
+
+Phase 3 began from verified `main` commit
+`9950009e83fec4d87ccbf814553f80f2be5968ac`, which matched a freshly fetched
+`origin/main` with a clean working tree after Phase 2 pull request
+[#2](https://github.com/ricesaurus/geotechnical-monitoring-time-series/pull/2) was
+confirmed merged. Work is isolated on `phase/3-exploratory-dynamics`. Preserved raw
+resources pass the committed checksum manifest, and the existing Phase 2 interim
+Parquet products are available for reproducible Phase 3 analysis. Implementation,
+tests, the complete reproduction workflow, 12 aggregate tables, nine inspected
+figures, an executed restart-and-run notebook, the Phase 3 report, and learning
+documentation are complete locally. Publication, draft-pull-request creation, and
+remote CI verification remain in progress. Forecasting, ARIMA/ARIMAX fitting,
+changepoint detection, interpolation, and causal claims remain out of scope.
 
 Phase 2 began from verified `main` commit
 `bc0fc8eeaad584857aa92b390b4d1ab18b83250e`, which matched a freshly fetched
@@ -75,6 +88,55 @@ verified through the connected GitHub capability, and its `quality-checks` Actio
 
 Optional spectral analysis may be added only in a later assigned phase if sampling,
 record length, and the engineering question support it.
+
+## Phase 3 acceptance criteria
+
+- [x] Phase 2 PR #2 is merged; freshly fetched `main` exactly matched `origin/main` at
+  `9950009e83fec4d87ccbf814553f80f2be5968ac` with a clean tree before branching.
+- [x] Preserved raw resources pass SHA-256 verification and existing Phase 2 interim
+  products are reused without redownload or source modification.
+- [x] Explicit level/change/rain masks retain range concerns, require consecutive dates
+  and stable regimes, and never cross gaps, water-year resets, offsets, estimates,
+  replacements, relocations, or successors.
+- [x] Coverage, blank-versus-absent missingness, exact gap lengths, conventional/robust
+  distributions, water-year seasonality, and documented regimes are summarized.
+- [x] Robust STL is limited to sufficiently long exact-contiguous daily runs, with
+  365/366-day sensitivity; no gap filling is used.
+- [x] ADF and KPSS are interpreted jointly; ACF/PACF report daily lag units, sample
+  sizes, maximum lags, and approximate bands inside individual regimes.
+- [x] A seed-170 AR(1), MA(1), and random-walk learning example is clearly labeled
+  synthetic and kept separate from USGS observations.
+- [x] Daily relationships use exact dates, a positive-predictor-leads convention,
+  declared 0–30-day searches, two precipitation definitions, transformed and
+  prewhitened sensitivity, and moving-block bootstrap uncertainty.
+- [x] Three events are selected by rain only; 15-minute response diagnostics use
+  one-to-one no-reuse matching and compare 8- and 15-minute tolerances over declared
+  0–48-hour searches.
+- [x] Reusable functions, synthetic-fixture tests, a build script, output validation,
+  aggregate-only tables, inspected figures, an executed notebook, report, README, data
+  documentation, learning notes, and this plan are complete.
+- [ ] The audited branch is pushed, exactly one verified draft PR targets `main`, and
+  the final commit's GitHub Actions result is confirmed successful.
+- [x] Phase 4 has not started.
+
+## Completed Phase 3 work
+
+- Built 97,868 ignored daily analysis rows and 3,974 ignored event-match rows from the
+  preserved Phase 2 interim layer; raw and interim data were not edited.
+- Produced and validated 12 aggregate diagnostic tables and nine curated figures; all
+  figures and the notebook were visually or execution inspected.
+- Found robust same-day/next-day rain–hydrologic associations and a modest two-day
+  long-window toe rain–displacement association, while middle-displacement and shorter
+  toe-period findings remain weak or uncertain after dependence adjustment.
+- Demonstrated that naive cumulative-level correlations shrink sharply after valid
+  changes and prewhitening, and that event-scale lags are not stable across storms.
+- Preserved negative displacement changes and range-concern observations while keeping
+  their interpretation explicitly unresolved.
+
+## Remaining Phase 3 work
+
+- Audit the complete diff and tracked scope, run all checks, commit and push the branch,
+  create one draft pull request, and confirm the final GitHub Actions result.
 
 ## Phase 2 acceptance criteria
 
@@ -226,8 +288,10 @@ None. Stop here; beginning Phase 1 requires a new assignment.
   on 623 dates in 1999–2000, 2007, and 2013; the fixed offsets are not explained by the
   released schemas.
 - Cross-station 15-minute logger phases differ, and the successor toe period has no exact
-  common high-frequency timestamp across the selected middle/toe set. Alignment remains
-  an explicit Phase 3 decision.
+  common high-frequency timestamp across the selected middle/toe set. Phase 3 used
+  deterministic one-to-one nearest matching with 8- and 15-minute sensitivity; one
+  event/response result was alignment-unstable and event-to-event lag stability was not
+  supported.
 - Negative pressure-head and extensometer values are metadata range concerns, not proven
   invalid observations, and require later sensor/engineering interpretation.
 - Official GPS pages conflict on whether the one-water-year coverage is 2016–2017 or
@@ -238,11 +302,12 @@ None. Stop here; beginning Phase 1 requires a new assignment.
 
 ## Next phase (not started)
 
-Phase 3 should use only the Phase 2 quality-flagged, explicitly segmented records to
-characterize coverage, missingness patterns, distributions, trend, seasonality,
-stationarity, and within-series dependence for the retained middle core and pre-topple
-toe subset. Begin cross-series work on verified daily products; evaluate event-focused
-15-minute windows only with a declared, sensitivity-tested alignment rule that never
-bridges gaps, resets, estimates, replacements, relocations, or successor IDs. Do not
-begin forecasting, ARIMA/ARIMAX fitting, changepoint detection, interpolation, or causal
-claims.
+Using only Phase 3's eligible, regime-specific daily transformations, develop and
+chronologically validate leakage-free displacement-change forecast baselines and
+parsimonious ARIMA/ARIMAX candidates for the stable middle and long pre-topple toe
+windows; compare persistence, zero-change, and seasonal baselines at identical rolling
+origins and horizons; admit hydrologic predictors only when their availability and
+Phase 3 lag evidence justify them; evaluate residual dependence, interval calibration,
+and stability; investigate metadata-informed changepoints separately without crossing
+instrument regimes; and stop before final engineering synthesis or any causal or
+operational-warning claim.

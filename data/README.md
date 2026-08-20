@@ -41,6 +41,22 @@ Reproduce and verify Phase 2 locally with:
 No raw archive, sensor-description file, parsed row, measurement observation, or
 Parquet dataset is committed.
 
+Phase 3 local processed layout:
+
+- `processed/cleveland_corral/phase3_daily_analysis_series.parquet`: explicit daily
+  level/change/rain-definition masks and derived values;
+- `processed/cleveland_corral/phase3_event_alignment_pairs.parquet`: ignored
+  one-to-one event match details used by the aggregate sensitivity diagnostics.
+
+Both files are generated from the Phase 2 interim products and remain git-ignored.
+Version-controlled Phase 3 tables under `reports/tables/phase3/` are aggregate
+diagnostics only; they contain no timestamped observation rows. Reproduce them with:
+
+```powershell
+./.venv/Scripts/python.exe ./scripts/build_phase3_analysis.py
+./.venv/Scripts/python.exe ./scripts/verify_phase3_outputs.py
+```
+
 Every downloaded dataset must be accompanied by a versioned provenance record that
 contains at least:
 

@@ -178,3 +178,101 @@ first establishing that the numerical sequence and its time index mean what the 
 assumes. In geotechnical terms, the same discipline prevents logger behavior, sensor
 replacement, or data repair from being misread as infiltration, pressure response, or
 landslide displacement.
+
+## Phase 3 — exploratory structure and dynamics
+
+### Regular versus irregular sampling
+
+A time series is regular when adjacent observations occupy a consistent grid, such as
+one value per calendar day. It is irregular when timestamps drift, intervals are
+missing, or measurements occur at changing phases. A daily ACF interprets lag 1 as one
+day only when the selected observations form an exact contiguous daily run. A
+15-minute nearest match must additionally declare how far apart two logger times may
+be and must not reuse one observation for multiple matches. Phase 3 therefore uses
+exact dates for daily work and one-to-one 8- and 15-minute tolerance rules for selected
+events, without interpolation.
+
+### Levels, differences, and cumulative resets
+
+A level is the published state at a time. A first difference is the current level minus
+the previous level and describes change only when both observations are consecutive
+and comparable. Cleveland Corral rain and displacement reset by water year, so a
+difference across October 1 would combine a physical change with a bookkeeping reset.
+Phase 3 differences only consecutive eligible observations inside one water year and
+one instrument regime. Negative displacement changes are retained; their sign is not
+silently reinterpreted as invalid measurement.
+
+Published daily rain is a cumulative daily maximum rather than a verified daily total.
+Phase 3 compares valid within-water-year differences with sums of the 15-minute
+interval-rain field on adequately covered days. Agreement between conclusions under
+both definitions is stronger evidence of robustness than selecting whichever
+definition gives the largest correlation.
+
+### Trend, seasonality, and stationarity
+
+Trend is a gradual change in the typical level. Seasonality is repeatable structure at
+a calendar period, such as the broad wet-season response visible across Cleveland
+Corral water years. A weakly stationary process has a stable mean and variance and an
+autocovariance that depends on lag rather than absolute time. A strongly seasonal or
+cumulative series is generally not level-stationary even when its physical behavior is
+repeatable.
+
+STL can separate an observed series into trend, seasonal, and remainder components,
+but it requires a regular sequence. Filling gaps just to make STL run would manufacture
+data and dependence. Phase 3 uses robust STL only on exact contiguous daily segments at
+least two annual cycles long, selects 365 days, and checks 366 days. Its components are
+descriptions, not unique physical mechanisms.
+
+### ADF versus KPSS
+
+The augmented Dickey–Fuller test starts with a unit-root null: a small p-value argues
+against that form of nonstationarity. KPSS reverses the burden of proof by starting
+with a level-stationarity null: a small p-value argues against stationarity. ADF reject
+plus KPSS not-reject is consistent with level stationarity; ADF not-reject plus KPSS
+reject is consistent with nonstationarity. Other combinations are inconclusive or
+disagreeing. Neither test resolves seasonality, structural changes, bounded event
+pulses, or sensor-regime changes, so Phase 3 uses them only inside defensible segments
+and alongside plots and ACF behavior.
+
+### What ACF and PACF measure
+
+The autocorrelation function (ACF) measures correlation between a series and its own
+lagged values. The partial autocorrelation function (PACF) measures the additional
+linear association at a lag after accounting for shorter lags. A gradual ACF decay with
+a dominant lag-1 PACF is characteristic of an AR(1)-like process; an MA(1) has an ACF
+that cuts off after lag 1 while its PACF decays. A random walk has persistently high
+sample autocorrelations because its level is nonstationary. Phase 3 demonstrates these
+patterns using a seed-170 synthetic example that is explicitly separate from USGS
+observations.
+
+### Why autocorrelation can mislead cross-correlation
+
+Two slowly changing or seasonal series can be highly correlated because each remains
+similar to its own recent history, not because one produces the other. Cumulative rain
+and displacement levels also share water-year accumulation. Cleveland Corral naive
+level correlations are therefore compared with valid changes and cautious
+prewhitening. Their sharp reduction after those adjustments is a practical example of
+why a large raw cross-correlation is not automatically a physical response signal.
+
+### Lag-sign conventions
+
+Phase 3 defines positive lag as **predictor leads response**. At daily lag 2, for
+example, rain on date `t` is paired with displacement change on date `t + 2 days`.
+Writing the convention beside every result prevents a common sign reversal when
+software packages define or plot cross-correlation differently.
+
+### Temporal association is not causation
+
+Temporal order and dependence-adjusted association may be compatible with the physical
+hypothesis, but they do not rule out common weather drivers, antecedent wetness,
+snowmelt, missingness, measurement error, sensor response, regime changes, or selective
+peak search. Event-to-event lag variation at Cleveland Corral is an additional warning
+against a single mechanistic interpretation. The result belongs in one of four clearly
+labeled categories: observed data, statistical inference, engineering interpretation,
+or speculation.
+
+This implements the UCLA Statistics 170 goals of visualizing time series, diagnosing
+stationarity and dependence, and understanding linear-process signatures. The
+geotechnical application adds essential constraints: fixed-PST timing, water-year
+resets, documented installations, physical location/depth, and the difference between
+an exploratory association and a landslide mechanism.

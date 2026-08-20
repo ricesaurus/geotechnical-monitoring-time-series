@@ -1,0 +1,4 @@
+event_id,selection_rank,event_date,daily_interval_rain_mm,coverage_count,selection_rule
+rain_event_01_2010-10-24,1,2010-10-24,135.382,93,top_3_eligible_daily_interval_rain_totals_minimum_7_days_apart
+rain_event_02_2008-01-04,2,2008-01-04,104.14,95,top_3_eligible_daily_interval_rain_totals_minimum_7_days_apart
+rain_event_03_2012-11-30,3,2012-11-30,83.566,94,top_3_eligible_daily_interval_rain_totals_minimum_7_days_apart
