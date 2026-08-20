@@ -1,0 +1,202 @@
+run_id,sensor_id,transformation,scope_id,start_date,end_date,n,adf_statistic,adf_p_value,adf_used_lags,kpss_statistic,kpss_p_value,kpss_used_lags,joint_interpretation,test_warning
+mid_E2_B__daily_first_difference__mid_E2_B_s01_hx_pa_400_29030259__r7,mid_E2_B,daily_first_difference,mid_E2_B_s01_hx_pa_400_29030259,2004-10-02,2005-09-30,364,-4.48933945614959,0.00020554805303148885,12,0.25026853115565517,0.1,11,consistent_with_level_stationarity,"The test statistic is outside of the range of p-values available in the
+look-up table. The actual p-value is greater than the p-value returned.
+"
+mid_E2_B__daily_first_difference__mid_E2_B_s02_hx_vpa_400_27090342__r1,mid_E2_B,daily_first_difference,mid_E2_B_s02_hx_vpa_400_27090342,2005-12-06,2006-09-13,282,-2.183594992367522,0.2122533118242877,5,0.30809030760275324,0.1,10,tests_disagree_or_are_inconclusive,"The test statistic is outside of the range of p-values available in the
+look-up table. The actual p-value is greater than the p-value returned.
+"
+mid_E2_B__daily_first_difference__mid_E2_B_s05_hx_pa_400_29030259__r1,mid_E2_B,daily_first_difference,mid_E2_B_s05_hx_pa_400_29030259,2008-04-25,2008-09-30,159,-6.60171977427545,6.709895234417505e-09,5,0.12043304568267447,0.1,3,consistent_with_level_stationarity,"The test statistic is outside of the range of p-values available in the
+look-up table. The actual p-value is greater than the p-value returned.
+"
+mid_E2_B__daily_first_difference__mid_E2_B_s06_hx_vpa_400_27090342__r13,mid_E2_B,daily_first_difference,mid_E2_B_s06_hx_vpa_400_27090342,2011-10-02,2012-08-21,325,-8.931344689888082,9.796043938089103e-15,8,0.2821375305103312,0.1,12,consistent_with_level_stationarity,"The test statistic is outside of the range of p-values available in the
+look-up table. The actual p-value is greater than the p-value returned.
+"
+mid_E2_B__daily_first_difference__mid_E2_B_s07_hx_pa_400_39070751__r5,mid_E2_B,daily_first_difference,mid_E2_B_s07_hx_pa_400_39070751,2017-03-08,2017-09-30,207,-7.422767484237351,6.669005572435544e-11,3,0.06166273477546964,0.1,5,consistent_with_level_stationarity,"The test statistic is outside of the range of p-values available in the
+look-up table. The actual p-value is greater than the p-value returned.
+"
+mid_E2_B__daily_level__mid_E2_B_s01_hx_pa_400_29030259__WY2003__r3,mid_E2_B,daily_level,mid_E2_B_s01_hx_pa_400_29030259__WY2003,2003-02-24,2003-09-30,219,-1.549915209990115,0.508690549541851,6,1.7452949683156902,0.01,9,consistent_with_nonstationarity,"The test statistic is outside of the range of p-values available in the
+look-up table. The actual p-value is smaller than the p-value returned.
+"
+mid_E2_B__daily_level__mid_E2_B_s01_hx_pa_400_29030259__WY2004__r2,mid_E2_B,daily_level,mid_E2_B_s01_hx_pa_400_29030259__WY2004,2004-02-23,2004-08-08,168,-0.44808663068549504,0.901755173403687,6,1.553991058544402,0.01,8,consistent_with_nonstationarity,"The test statistic is outside of the range of p-values available in the
+look-up table. The actual p-value is smaller than the p-value returned.
+"
+mid_E2_B__daily_level__mid_E2_B_s01_hx_pa_400_29030259__WY2005__r1,mid_E2_B,daily_level,mid_E2_B_s01_hx_pa_400_29030259__WY2005,2004-10-01,2005-09-30,365,-0.36848037624794844,0.9152299053768104,13,2.7414210689560994,0.01,11,consistent_with_nonstationarity,"The test statistic is outside of the range of p-values available in the
+look-up table. The actual p-value is smaller than the p-value returned.
+"
+mid_E2_B__daily_level__mid_E2_B_s02_hx_vpa_400_27090342__WY2006__r1,mid_E2_B,daily_level,mid_E2_B_s02_hx_vpa_400_27090342__WY2006,2005-12-05,2006-09-13,283,-1.5317499270999826,0.5177507494243345,6,2.3149059736982807,0.01,10,consistent_with_nonstationarity,"The test statistic is outside of the range of p-values available in the
+look-up table. The actual p-value is smaller than the p-value returned.
+"
+mid_E2_B__daily_level__mid_E2_B_s02_hx_vpa_400_27090342__WY2007__r1,mid_E2_B,daily_level,mid_E2_B_s02_hx_vpa_400_27090342__WY2007,2006-10-01,2007-02-22,145,-2.328704256321312,0.16287730664216515,0,1.1199051496255399,0.01,8,consistent_with_nonstationarity,"The test statistic is outside of the range of p-values available in the
+look-up table. The actual p-value is smaller than the p-value returned.
+"
+mid_E2_B__daily_level__mid_E2_B_s05_hx_pa_400_29030259__WY2008__r1,mid_E2_B,daily_level,mid_E2_B_s05_hx_pa_400_29030259__WY2008,2008-04-24,2008-09-30,160,-2.096718509694296,0.24583615095188371,0,1.6045390369018158,0.01,8,consistent_with_nonstationarity,"The test statistic is outside of the range of p-values available in the
+look-up table. The actual p-value is smaller than the p-value returned.
+"
+mid_E2_B__daily_level__mid_E2_B_s05_hx_pa_400_29030259__WY2009__r1,mid_E2_B,daily_level,mid_E2_B_s05_hx_pa_400_29030259__WY2009,2008-10-01,2009-02-10,133,-2.294813282009424,0.1736462485281302,0,1.2002546252634645,0.01,6,consistent_with_nonstationarity,"The test statistic is outside of the range of p-values available in the
+look-up table. The actual p-value is smaller than the p-value returned.
+"
+mid_E2_B__daily_level__mid_E2_B_s06_hx_vpa_400_27090342__WY2009__r2,mid_E2_B,daily_level,mid_E2_B_s06_hx_vpa_400_27090342__WY2009,2009-02-18,2009-09-25,220,-1.0175984765371457,0.7467916689313108,6,2.205314817384915,0.01,9,consistent_with_nonstationarity,"The test statistic is outside of the range of p-values available in the
+look-up table. The actual p-value is smaller than the p-value returned.
+"
+mid_E2_B__daily_level__mid_E2_B_s06_hx_vpa_400_27090342__WY2010__r3,mid_E2_B,daily_level,mid_E2_B_s06_hx_vpa_400_27090342__WY2010,2010-01-26,2010-09-30,248,-1.8098310091249312,0.3755919094011464,4,2.0693613944559126,0.01,10,consistent_with_nonstationarity,"The test statistic is outside of the range of p-values available in the
+look-up table. The actual p-value is smaller than the p-value returned.
+"
+mid_E2_B__daily_level__mid_E2_B_s06_hx_vpa_400_27090342__WY2012__r1,mid_E2_B,daily_level,mid_E2_B_s06_hx_vpa_400_27090342__WY2012,2011-10-01,2012-08-21,326,-0.07169907133542831,0.9521854695809348,9,2.1325694341537216,0.01,11,consistent_with_nonstationarity,"The test statistic is outside of the range of p-values available in the
+look-up table. The actual p-value is smaller than the p-value returned.
+"
+mid_E2_B__daily_level__mid_E2_B_s06_hx_vpa_400_27090342__WY2013__r1,mid_E2_B,daily_level,mid_E2_B_s06_hx_vpa_400_27090342__WY2013,2012-10-02,2013-04-18,199,-1.8490172571975338,0.3564115885133944,2,1.2224936332122358,0.01,9,consistent_with_nonstationarity,"The test statistic is outside of the range of p-values available in the
+look-up table. The actual p-value is smaller than the p-value returned.
+"
+mid_E2_B__daily_level__mid_E2_B_s06_hx_vpa_400_27090342__WY2014__r4,mid_E2_B,daily_level,mid_E2_B_s06_hx_vpa_400_27090342__WY2014,2014-04-02,2014-09-30,182,-2.624386818773586,0.08806102283229328,0,1.4315973911380941,0.01,9,consistent_with_nonstationarity,"The test statistic is outside of the range of p-values available in the
+look-up table. The actual p-value is smaller than the p-value returned.
+"
+mid_E2_B__daily_level__mid_E2_B_s06_hx_vpa_400_27090342__WY2015__r1,mid_E2_B,daily_level,mid_E2_B_s06_hx_vpa_400_27090342__WY2015,2014-10-01,2015-04-07,189,-2.6275246024057597,0.08744087305989712,13,0.3829955520236175,0.084484675851889,9,tests_disagree_or_are_inconclusive,none
+mid_E2_B__daily_level__mid_E2_B_s06_hx_vpa_400_27090342__WY2016__r1,mid_E2_B,daily_level,mid_E2_B_s06_hx_vpa_400_27090342__WY2016,2015-10-01,2016-05-31,244,-2.331550857062652,0.16199397556177497,0,1.5390107895781604,0.01,9,consistent_with_nonstationarity,"The test statistic is outside of the range of p-values available in the
+look-up table. The actual p-value is smaller than the p-value returned.
+"
+mid_E2_B__daily_level__mid_E2_B_s07_hx_pa_400_39070751__WY2016__r1,mid_E2_B,daily_level,mid_E2_B_s07_hx_pa_400_39070751__WY2016,2016-06-01,2016-09-30,122,-9.693039074108736,1.1231707110429619e-16,0,0.2762508005347889,0.1,5,consistent_with_level_stationarity,"The test statistic is outside of the range of p-values available in the
+look-up table. The actual p-value is greater than the p-value returned.
+"
+mid_E2_B__daily_level__mid_E2_B_s07_hx_pa_400_39070751__WY2017__r4,mid_E2_B,daily_level,mid_E2_B_s07_hx_pa_400_39070751__WY2017,2017-03-07,2017-09-30,208,-2.168195861759792,0.21799029857536906,4,0.6151210777695343,0.021261720202769608,9,consistent_with_nonstationarity,none
+mid_E2_B__daily_level__mid_E2_B_s07_hx_pa_400_39070751__WY2018__r3,mid_E2_B,daily_level,mid_E2_B_s07_hx_pa_400_39070751__WY2018,2018-03-19,2018-09-24,190,-2.1739941090241146,0.21581910018772793,10,1.6101779042784572,0.01,9,consistent_with_nonstationarity,"The test statistic is outside of the range of p-values available in the
+look-up table. The actual p-value is smaller than the p-value returned.
+"
+mid_P1__daily_first_difference__mid_P1_s01_usgs5_depth_1_79m__r18,mid_P1,daily_first_difference,mid_P1_s01_usgs5_depth_1_79m,2004-08-12,2005-09-30,415,-6.642629515183956,5.362177158860341e-09,7,0.17260134520136078,0.1,6,consistent_with_level_stationarity,"The test statistic is outside of the range of p-values available in the
+look-up table. The actual p-value is greater than the p-value returned.
+"
+mid_P1__daily_first_difference__mid_P1_s02_usgsct2_depth_1_82m__r9,mid_P1,daily_first_difference,mid_P1_s02_usgsct2_depth_1_82m,2015-07-05,2018-09-24,1178,-7.5637137835561505,2.963568119790863e-11,21,0.0491256800124377,0.1,27,consistent_with_level_stationarity,"The test statistic is outside of the range of p-values available in the
+look-up table. The actual p-value is greater than the p-value returned.
+"
+mid_P1__daily_level__mid_P1_s01_usgs5_depth_1_79m__r18,mid_P1,daily_level,mid_P1_s01_usgs5_depth_1_79m,2004-08-11,2005-09-30,416,-1.6515373632175423,0.4562387679594099,8,0.7251271172350984,0.011261171160445602,12,consistent_with_nonstationarity,none
+mid_P1__daily_level__mid_P1_s02_usgsct2_depth_1_82m__r10,mid_P1,daily_level,mid_P1_s02_usgsct2_depth_1_82m,2015-07-04,2018-09-24,1179,-2.7277848536995943,0.069352442929008,19,0.3398817954491747,0.1,20,tests_disagree_or_are_inconclusive,"The test statistic is outside of the range of p-values available in the
+look-up table. The actual p-value is greater than the p-value returned.
+"
+mid_P2__daily_first_difference__mid_P2_s01_usgs6_depth_3_69m__r29,mid_P2,daily_first_difference,mid_P2_s01_usgs6_depth_3_69m,2015-07-05,2018-09-25,1179,-6.656035205357986,4.981607041255819e-09,6,0.11533340355741799,0.1,3,consistent_with_level_stationarity,"The test statistic is outside of the range of p-values available in the
+look-up table. The actual p-value is greater than the p-value returned.
+"
+mid_P2__daily_level__mid_P2_s01_usgs6_depth_3_69m__r30,mid_P2,daily_level,mid_P2_s01_usgs6_depth_3_69m,2015-07-04,2018-09-25,1180,-1.885300336203164,0.3390075790749105,7,0.4270808553798418,0.06548238992248198,20,tests_disagree_or_are_inconclusive,none
+mid_R__daily_cumulative_difference__mid_R_s01_pre_fire__r11,mid_R,daily_cumulative_difference,mid_R_s01_pre_fire,2000-12-16,2001-09-30,289,-2.832464237144616,0.05378402702998874,13,0.8975449387969128,0.01,7,consistent_with_nonstationarity,"The test statistic is outside of the range of p-values available in the
+look-up table. The actual p-value is smaller than the p-value returned.
+"
+mid_R__daily_cumulative_difference__mid_R_s02_post_fire__r12,mid_R,daily_cumulative_difference,mid_R_s02_post_fire,2007-10-02,2008-09-30,365,-10.25043658615856,4.500530074697846e-18,1,0.8129706706957788,0.01,7,tests_disagree_or_are_inconclusive,"The test statistic is outside of the range of p-values available in the
+look-up table. The actual p-value is smaller than the p-value returned.
+"
+mid_R__daily_cumulative_difference__mid_R_s03_post_mechanical_failure__r1,mid_R,daily_cumulative_difference,mid_R_s03_post_mechanical_failure,2016-01-29,2016-09-30,246,-3.3203144027316607,0.013994483049352583,7,1.2870227761496433,0.01,6,tests_disagree_or_are_inconclusive,"The test statistic is outside of the range of p-values available in the
+look-up table. The actual p-value is smaller than the p-value returned.
+"
+mid_R__daily_cumulative_difference__mid_R_s04_range_not_stated__r2,mid_R,daily_cumulative_difference,mid_R_s04_range_not_stated,2017-10-02,2018-09-25,359,-7.468959253544283,5.11493883935085e-11,2,0.5251302117524816,0.036006709064756386,8,tests_disagree_or_are_inconclusive,none
+mid_R__daily_cumulative_level__mid_R_s01_pre_fire__WY1997__r1,mid_R,daily_cumulative_level,mid_R_s01_pre_fire__WY1997,1997-03-22,1997-09-30,193,-1.928356777305318,0.3188409984497811,11,1.7451410490047026,0.01,9,consistent_with_nonstationarity,"The test statistic is outside of the range of p-values available in the
+look-up table. The actual p-value is smaller than the p-value returned.
+"
+mid_R__daily_cumulative_level__mid_R_s01_pre_fire__WY1998__r1,mid_R,daily_cumulative_level,mid_R_s01_pre_fire__WY1998,1997-10-01,1998-03-20,171,0.21172587473173254,0.9729116470025171,4,1.7025791223198974,0.01,9,consistent_with_nonstationarity,"The test statistic is outside of the range of p-values available in the
+look-up table. The actual p-value is smaller than the p-value returned.
+"
+mid_R__daily_cumulative_level__mid_R_s01_pre_fire__WY1999__r1,mid_R,daily_cumulative_level,mid_R_s01_pre_fire__WY1999,1998-10-01,1999-04-12,194,0.5437858995968706,0.9861448958508943,1,1.9651998235625874,0.01,9,consistent_with_nonstationarity,"The test statistic is outside of the range of p-values available in the
+look-up table. The actual p-value is smaller than the p-value returned.
+"
+mid_R__daily_cumulative_level__mid_R_s01_pre_fire__WY2000__r1,mid_R,daily_cumulative_level,mid_R_s01_pre_fire__WY2000,1999-10-01,2000-08-06,311,-1.2367764901776168,0.6575787777786064,4,2.5687584079041255,0.01,11,consistent_with_nonstationarity,"The test statistic is outside of the range of p-values available in the
+look-up table. The actual p-value is smaller than the p-value returned.
+"
+mid_R__daily_cumulative_level__mid_R_s01_pre_fire__WY2001__r2,mid_R,daily_cumulative_level,mid_R_s01_pre_fire__WY2001,2000-12-15,2001-09-30,290,-2.6291719306230688,0.08711665156871429,14,2.259376452114091,0.01,10,consistent_with_nonstationarity,"The test statistic is outside of the range of p-values available in the
+look-up table. The actual p-value is smaller than the p-value returned.
+"
+mid_R__daily_cumulative_level__mid_R_s02_post_fire__WY2003__r3,mid_R,daily_cumulative_level,mid_R_s02_post_fire__WY2003,2003-02-24,2003-09-30,219,-3.15257815080206,0.022899035215780558,12,1.6711490893748226,0.01,9,tests_disagree_or_are_inconclusive,"The test statistic is outside of the range of p-values available in the
+look-up table. The actual p-value is smaller than the p-value returned.
+"
+mid_R__daily_cumulative_level__mid_R_s02_post_fire__WY2004__r2,mid_R,daily_cumulative_level,mid_R_s02_post_fire__WY2004,2004-02-23,2004-08-08,168,-8.636234071574455,5.5811429286250214e-14,0,1.675516308003573,0.01,8,tests_disagree_or_are_inconclusive,"The test statistic is outside of the range of p-values available in the
+look-up table. The actual p-value is smaller than the p-value returned.
+"
+mid_R__daily_cumulative_level__mid_R_s02_post_fire__WY2005__r1,mid_R,daily_cumulative_level,mid_R_s02_post_fire__WY2005,2004-10-01,2005-09-30,365,-2.3499763584935596,0.15635555676118212,1,3.0106124104115706,0.01,11,consistent_with_nonstationarity,"The test statistic is outside of the range of p-values available in the
+look-up table. The actual p-value is smaller than the p-value returned.
+"
+mid_R__daily_cumulative_level__mid_R_s02_post_fire__WY2006__r2,mid_R,daily_cumulative_level,mid_R_s02_post_fire__WY2006,2005-10-18,2006-09-13,331,-2.0141829809163205,0.28038918921639433,3,2.6056987726370244,0.01,11,consistent_with_nonstationarity,"The test statistic is outside of the range of p-values available in the
+look-up table. The actual p-value is smaller than the p-value returned.
+"
+mid_R__daily_cumulative_level__mid_R_s02_post_fire__WY2007__r1,mid_R,daily_cumulative_level,mid_R_s02_post_fire__WY2007,2006-10-01,2007-09-30,365,-2.3439432276282814,0.15818666754139638,1,2.8930007945649305,0.01,11,consistent_with_nonstationarity,"The test statistic is outside of the range of p-values available in the
+look-up table. The actual p-value is smaller than the p-value returned.
+"
+mid_R__daily_cumulative_level__mid_R_s02_post_fire__WY2008__r1,mid_R,daily_cumulative_level,mid_R_s02_post_fire__WY2008,2007-10-01,2008-09-30,366,-2.332143825376856,0.16181038363776806,2,2.730045574165635,0.01,11,consistent_with_nonstationarity,"The test statistic is outside of the range of p-values available in the
+look-up table. The actual p-value is smaller than the p-value returned.
+"
+mid_R__daily_cumulative_level__mid_R_s02_post_fire__WY2009__r1,mid_R,daily_cumulative_level,mid_R_s02_post_fire__WY2009,2008-10-01,2009-09-25,360,-1.7008450762799472,0.4306771208268126,7,2.931438765708934,0.01,11,consistent_with_nonstationarity,"The test statistic is outside of the range of p-values available in the
+look-up table. The actual p-value is smaller than the p-value returned.
+"
+mid_R__daily_cumulative_level__mid_R_s02_post_fire__WY2010__r1,mid_R,daily_cumulative_level,mid_R_s02_post_fire__WY2010,2009-10-01,2010-09-30,365,-2.1731565818430063,0.21613189546508071,1,3.0494883433483233,0.01,11,consistent_with_nonstationarity,"The test statistic is outside of the range of p-values available in the
+look-up table. The actual p-value is smaller than the p-value returned.
+"
+mid_R__daily_cumulative_level__mid_R_s02_post_fire__WY2011__r1,mid_R,daily_cumulative_level,mid_R_s02_post_fire__WY2011,2010-10-01,2011-05-25,237,-1.106121532490605,0.7126245448607174,1,2.203897660396325,0.01,10,consistent_with_nonstationarity,"The test statistic is outside of the range of p-values available in the
+look-up table. The actual p-value is smaller than the p-value returned.
+"
+mid_R__daily_cumulative_level__mid_R_s02_post_fire__WY2012__r1,mid_R,daily_cumulative_level,mid_R_s02_post_fire__WY2012,2011-10-01,2012-08-21,326,-0.6281127228684908,0.8645023437052124,4,2.7337805627470444,0.01,11,consistent_with_nonstationarity,"The test statistic is outside of the range of p-values available in the
+look-up table. The actual p-value is smaller than the p-value returned.
+"
+mid_R__daily_cumulative_level__mid_R_s02_post_fire__WY2013__r1,mid_R,daily_cumulative_level,mid_R_s02_post_fire__WY2013,2012-10-02,2013-09-08,342,-2.7320877232326897,0.0686483686472855,2,2.5107435205636035,0.01,11,consistent_with_nonstationarity,"The test statistic is outside of the range of p-values available in the
+look-up table. The actual p-value is smaller than the p-value returned.
+"
+mid_R__daily_cumulative_level__mid_R_s02_post_fire__WY2014__r3,mid_R,daily_cumulative_level,mid_R_s02_post_fire__WY2014,2014-01-13,2014-09-30,261,-3.384672361804074,0.01149262049288684,4,1.8418534609595063,0.01,10,tests_disagree_or_are_inconclusive,"The test statistic is outside of the range of p-values available in the
+look-up table. The actual p-value is smaller than the p-value returned.
+"
+mid_R__daily_cumulative_level__mid_R_s02_post_fire__WY2015__r1,mid_R,daily_cumulative_level,mid_R_s02_post_fire__WY2015,2014-10-01,2015-06-30,273,-1.0325253156497014,0.7412174074166085,1,2.511961894763892,0.01,10,consistent_with_nonstationarity,"The test statistic is outside of the range of p-values available in the
+look-up table. The actual p-value is smaller than the p-value returned.
+"
+mid_R__daily_cumulative_level__mid_R_s03_post_mechanical_failure__WY2016__r1,mid_R,daily_cumulative_level,mid_R_s03_post_mechanical_failure__WY2016,2016-01-28,2016-09-30,247,-2.662471319729593,0.08076052867822958,8,1.6442877647774143,0.01,10,consistent_with_nonstationarity,"The test statistic is outside of the range of p-values available in the
+look-up table. The actual p-value is smaller than the p-value returned.
+"
+mid_R__daily_cumulative_level__mid_R_s03_post_mechanical_failure__WY2017__r1,mid_R,daily_cumulative_level,mid_R_s03_post_mechanical_failure__WY2017,2016-10-01,2017-05-17,229,-0.722807688771709,0.8407530563505663,1,2.366396816559296,0.01,9,consistent_with_nonstationarity,"The test statistic is outside of the range of p-values available in the
+look-up table. The actual p-value is smaller than the p-value returned.
+"
+mid_R__daily_cumulative_level__mid_R_s04_range_not_stated__WY2017__r1,mid_R,daily_cumulative_level,mid_R_s04_range_not_stated__WY2017,2017-05-18,2017-09-30,136,-0.949319633412662,0.7712974103761283,1,1.4322553031982546,0.01,6,consistent_with_nonstationarity,"The test statistic is outside of the range of p-values available in the
+look-up table. The actual p-value is smaller than the p-value returned.
+"
+mid_R__daily_cumulative_level__mid_R_s04_range_not_stated__WY2018__r1,mid_R,daily_cumulative_level,mid_R_s04_range_not_stated__WY2018,2017-10-01,2018-09-25,360,-1.8286200239815835,0.36634804547094507,3,2.8848741499816746,0.01,11,consistent_with_nonstationarity,"The test statistic is outside of the range of p-values available in the
+look-up table. The actual p-value is smaller than the p-value returned.
+"
+mid_R__daily_interval_sum__mid_R_s02_post_fire__r69,mid_R,daily_interval_sum,mid_R_s02_post_fire,2008-01-17,2009-09-24,617,-6.980106905735326,8.233977031763856e-10,6,0.22115207902558845,0.1,11,consistent_with_level_stationarity,"The test statistic is outside of the range of p-values available in the
+look-up table. The actual p-value is greater than the p-value returned.
+"
+mid_R__daily_interval_sum__mid_R_s03_post_mechanical_failure__r3,mid_R,daily_interval_sum,mid_R_s03_post_mechanical_failure,2016-10-17,2017-05-17,213,-9.234759587694898,1.6418230492640156e-15,0,0.24116627293059978,0.1,6,consistent_with_level_stationarity,"The test statistic is outside of the range of p-values available in the
+look-up table. The actual p-value is greater than the p-value returned.
+"
+mid_R__daily_interval_sum__mid_R_s04_range_not_stated__r1,mid_R,daily_interval_sum,mid_R_s04_range_not_stated,2017-05-18,2018-09-24,495,-8.61554052277858,6.305296011939684e-14,2,0.3342307121051213,0.1,9,consistent_with_level_stationarity,"The test statistic is outside of the range of p-values available in the
+look-up table. The actual p-value is greater than the p-value returned.
+"
+toe_E5_C__daily_first_difference__toe_E5_C_s01_pre_topple__r27,toe_E5_C,daily_first_difference,toe_E5_C_s01_pre_topple,2015-10-02,2016-09-30,365,-12.0362275057766,2.7992209599480967e-22,5,0.08250348740599239,0.1,21,consistent_with_level_stationarity,"The test statistic is outside of the range of p-values available in the
+look-up table. The actual p-value is greater than the p-value returned.
+"
+toe_E5_C__daily_first_difference__toe_E5_C_s03_post_relocation__r1,toe_E5_C,daily_first_difference,toe_E5_C_s03_post_relocation,2017-04-26,2017-09-25,153,-5.182609674488826,9.540019489165246e-06,11,0.4236775163575322,0.06694934639761543,7,consistent_with_level_stationarity,none
+toe_E5_C__daily_level__toe_E5_C_s01_pre_topple__WY2007__r1,toe_E5_C,daily_level,toe_E5_C_s01_pre_topple__WY2007,2006-11-30,2007-09-30,305,-1.4933012876384342,0.5368224551152843,6,2.4578930862820605,0.01,10,consistent_with_nonstationarity,"The test statistic is outside of the range of p-values available in the
+look-up table. The actual p-value is smaller than the p-value returned.
+"
+toe_E5_C__daily_level__toe_E5_C_s01_pre_topple__WY2008__r3,toe_E5_C,daily_level,toe_E5_C_s01_pre_topple__WY2008,2007-12-30,2008-09-30,276,-1.884848918699767,0.33922188050139823,2,2.3640012220643043,0.01,10,consistent_with_nonstationarity,"The test statistic is outside of the range of p-values available in the
+look-up table. The actual p-value is smaller than the p-value returned.
+"
+toe_E5_C__daily_level__toe_E5_C_s01_pre_topple__WY2009__r3,toe_E5_C,daily_level,toe_E5_C_s01_pre_topple__WY2009,2009-02-18,2009-09-30,225,-3.1996169947704214,0.02000685977189225,15,2.170527831142129,0.01,9,tests_disagree_or_are_inconclusive,"The test statistic is outside of the range of p-values available in the
+look-up table. The actual p-value is smaller than the p-value returned.
+"
+toe_E5_C__daily_level__toe_E5_C_s01_pre_topple__WY2010__r2,toe_E5_C,daily_level,toe_E5_C_s01_pre_topple__WY2010,2010-01-22,2010-09-30,252,-1.0286547304523082,0.742670227370308,1,2.1881754181495254,0.01,10,consistent_with_nonstationarity,"The test statistic is outside of the range of p-values available in the
+look-up table. The actual p-value is smaller than the p-value returned.
+"
+toe_E5_C__daily_level__toe_E5_C_s01_pre_topple__WY2012__r1,toe_E5_C,daily_level,toe_E5_C_s01_pre_topple__WY2012,2011-10-01,2012-05-15,228,-3.483032626640602,0.008433695771620677,3,0.3694903822379289,0.09030586972503064,9,consistent_with_level_stationarity,none
+toe_E5_C__daily_level__toe_E5_C_s01_pre_topple__WY2013__r2,toe_E5_C,daily_level,toe_E5_C_s01_pre_topple__WY2013,2012-12-27,2013-06-03,159,-3.888530762908761,0.0021208946276281234,1,1.3630183768724,0.01,8,tests_disagree_or_are_inconclusive,"The test statistic is outside of the range of p-values available in the
+look-up table. The actual p-value is smaller than the p-value returned.
+"
+toe_E5_C__daily_level__toe_E5_C_s01_pre_topple__WY2014__r2,toe_E5_C,daily_level,toe_E5_C_s01_pre_topple__WY2014,2014-01-13,2014-09-30,261,-5.6928572518331935,7.996896250660207e-07,0,0.21714666981703454,0.1,9,consistent_with_level_stationarity,"The test statistic is outside of the range of p-values available in the
+look-up table. The actual p-value is greater than the p-value returned.
+"
+toe_E5_C__daily_level__toe_E5_C_s01_pre_topple__WY2015__r1,toe_E5_C,daily_level,toe_E5_C_s01_pre_topple__WY2015,2014-10-01,2015-07-02,275,-3.7980588499910732,0.002927238054070737,3,0.4077861730182214,0.07379906335421492,9,consistent_with_level_stationarity,none
+toe_E5_C__daily_level__toe_E5_C_s01_pre_topple__WY2016__r1,toe_E5_C,daily_level,toe_E5_C_s01_pre_topple__WY2016,2015-10-01,2016-09-30,366,-2.6100336600896767,0.09094119548961777,6,0.44027194556263366,0.05979657518851998,11,tests_disagree_or_are_inconclusive,none
+toe_E5_C__daily_level__toe_E5_C_s03_post_relocation__WY2017__r1,toe_E5_C,daily_level,toe_E5_C_s03_post_relocation__WY2017,2017-04-25,2017-09-25,154,-11.454790441342997,5.741657878183632e-21,1,0.15641240100279705,0.1,6,consistent_with_level_stationarity,"The test statistic is outside of the range of p-values available in the
+look-up table. The actual p-value is greater than the p-value returned.
+"
+toe_M1_A__daily_first_difference__toe_M1_A_s01__r2,toe_M1_A,daily_first_difference,toe_M1_A_s01,2007-12-18,2011-01-12,1122,-36.151567600394586,0.0,0,0.048707312150868924,0.1,8,consistent_with_level_stationarity,"The test statistic is outside of the range of p-values available in the
+look-up table. The actual p-value is greater than the p-value returned.
+"
+toe_M1_A__daily_level__toe_M1_A_s01__r2,toe_M1_A,daily_level,toe_M1_A_s01,2007-12-17,2011-01-12,1123,-2.479526055140995,0.12053565773171365,1,0.17181707211950667,0.1,20,tests_disagree_or_are_inconclusive,"The test statistic is outside of the range of p-values available in the
+look-up table. The actual p-value is greater than the p-value returned.
+"
+toe_P7_B__daily_first_difference__toe_P7_B_s01_relocated_depth_1_03m__r6,toe_P7_B,daily_first_difference,toe_P7_B_s01_relocated_depth_1_03m,2007-12-18,2011-01-12,1122,-12.56697139498739,2.0433654443395805e-23,13,0.01185044794498642,0.1,10,consistent_with_level_stationarity,"The test statistic is outside of the range of p-values available in the
+look-up table. The actual p-value is greater than the p-value returned.
+"
+toe_P7_B__daily_level__toe_P7_B_s01_relocated_depth_1_03m__r6,toe_P7_B,daily_level,toe_P7_B_s01_relocated_depth_1_03m,2007-12-17,2011-01-12,1123,-6.013928797260929,1.5498149919794243e-07,1,0.2710010654556677,0.1,19,consistent_with_level_stationarity,"The test statistic is outside of the range of p-values available in the
+look-up table. The actual p-value is greater than the p-value returned.
+"

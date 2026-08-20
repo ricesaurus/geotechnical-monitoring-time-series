@@ -1,0 +1,17 @@
+run_id,sensor_id,transformation,scope_id,start_date,end_date,n,seasonal_period_days,robust_stl,seasonal_strength,trend_strength
+mid_P1__daily_first_difference__mid_P1_s02_usgsct2_depth_1_82m__r9,mid_P1,daily_first_difference,mid_P1_s02_usgsct2_depth_1_82m,2015-07-05,2018-09-24,1178,365,True,0.9885189972225397,0.011845800146357499
+mid_P1__daily_first_difference__mid_P1_s02_usgsct2_depth_1_82m__r9,mid_P1,daily_first_difference,mid_P1_s02_usgsct2_depth_1_82m,2015-07-05,2018-09-24,1178,366,True,0.9890673282906426,0.004866888582409135
+mid_P1__daily_level__mid_P1_s02_usgsct2_depth_1_82m__r10,mid_P1,daily_level,mid_P1_s02_usgsct2_depth_1_82m,2015-07-04,2018-09-24,1179,365,True,0.5137777661154747,0.002630487216231936
+mid_P1__daily_level__mid_P1_s02_usgsct2_depth_1_82m__r10,mid_P1,daily_level,mid_P1_s02_usgsct2_depth_1_82m,2015-07-04,2018-09-24,1179,366,True,0.5124639472093551,0.004167347075477834
+mid_P2__daily_first_difference__mid_P2_s01_usgs6_depth_3_69m__r29,mid_P2,daily_first_difference,mid_P2_s01_usgs6_depth_3_69m,2015-07-05,2018-09-25,1179,365,True,0.9736684679323437,0.11353325787384716
+mid_P2__daily_first_difference__mid_P2_s01_usgs6_depth_3_69m__r29,mid_P2,daily_first_difference,mid_P2_s01_usgs6_depth_3_69m,2015-07-05,2018-09-25,1179,366,True,0.9625451458218423,0.08237270900863658
+mid_P2__daily_level__mid_P2_s01_usgs6_depth_3_69m__r30,mid_P2,daily_level,mid_P2_s01_usgs6_depth_3_69m,2015-07-04,2018-09-25,1180,365,True,0.6075399938092155,0.035751306551492834
+mid_P2__daily_level__mid_P2_s01_usgs6_depth_3_69m__r30,mid_P2,daily_level,mid_P2_s01_usgs6_depth_3_69m,2015-07-04,2018-09-25,1180,366,True,0.6073902403748725,0.03612406992984263
+toe_M1_A__daily_first_difference__toe_M1_A_s01__r2,toe_M1_A,daily_first_difference,toe_M1_A_s01,2007-12-18,2011-01-12,1122,365,True,0.8518242549175585,0.0
+toe_M1_A__daily_first_difference__toe_M1_A_s01__r2,toe_M1_A,daily_first_difference,toe_M1_A_s01,2007-12-18,2011-01-12,1122,366,True,0.9379264285080974,0.0
+toe_M1_A__daily_level__toe_M1_A_s01__r2,toe_M1_A,daily_level,toe_M1_A_s01,2007-12-17,2011-01-12,1123,365,True,0.9486505815930442,0.08747404867448627
+toe_M1_A__daily_level__toe_M1_A_s01__r2,toe_M1_A,daily_level,toe_M1_A_s01,2007-12-17,2011-01-12,1123,366,True,0.9627987589868352,0.11161470779644378
+toe_P7_B__daily_first_difference__toe_P7_B_s01_relocated_depth_1_03m__r6,toe_P7_B,daily_first_difference,toe_P7_B_s01_relocated_depth_1_03m,2007-12-18,2011-01-12,1122,365,True,0.8084259450990999,0.0003894709811980146
+toe_P7_B__daily_first_difference__toe_P7_B_s01_relocated_depth_1_03m__r6,toe_P7_B,daily_first_difference,toe_P7_B_s01_relocated_depth_1_03m,2007-12-18,2011-01-12,1122,366,True,0.9003105150968012,0.0
+toe_P7_B__daily_level__toe_P7_B_s01_relocated_depth_1_03m__r6,toe_P7_B,daily_level,toe_P7_B_s01_relocated_depth_1_03m,2007-12-17,2011-01-12,1123,365,True,0.6098755054505685,0.11333185790636013
+toe_P7_B__daily_level__toe_P7_B_s01_relocated_depth_1_03m__r6,toe_P7_B,daily_level,toe_P7_B_s01_relocated_depth_1_03m,2007-12-17,2011-01-12,1123,366,True,0.6482989009612381,0.1212848416696759

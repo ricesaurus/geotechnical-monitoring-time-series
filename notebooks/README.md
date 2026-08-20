@@ -20,3 +20,8 @@ Notebooks should explain decisions and show results. Reusable ingestion, quality
 modeling, and validation logic belongs in `src/geotech_ts/`, where it can be tested.
 The sequence is a long-term outline, not a signal to create notebooks before their
 assigned phase.
+
+Phase 3 uses one restart-and-run notebook,
+`02_phase3_exploratory_dynamics.ipynb`, to orchestrate and explain the reusable Phase 3
+build. It covers the exploratory, decomposition/stationarity, ACF/PACF, and lagged
+cross-correlation topics together so masks and sign conventions remain consistent.

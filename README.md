@@ -33,13 +33,15 @@ proof of causation.
 
 ## Current status
 
-**Phase 2 — ingestion and sensor-aware quality control complete.** The official
-15-minute and daily archives are preserved locally with verified checksums; reusable
-code reproduces quality-flagged interim data and aggregate-only coverage, schema,
-compatibility, and product-semantics summaries. The long middle core remains primary,
-and the pre-topple toe set remains a segmented secondary set. No interpolation or
-Phase 3 analysis has started. See the
-[Phase 2 ingestion and QC report](docs/data/CLEVELAND_CORRAL_PHASE2_INGESTION_QC.md)
+**Phase 3 — exploratory structure and dynamics complete.** Reusable, tested code now
+builds explicit analysis masks, two defensible precipitation transformations,
+segment-aware coverage/distribution/decomposition/stationarity/ACF/PACF diagnostics,
+exact-date daily lag sensitivity, and rain-selected 15-minute event alignment. Twelve
+aggregate tables, nine inspected figures, and a restart-and-run notebook reproduce the
+findings without committing observation rows. No interpolation, successor splicing,
+forecasting, ARIMA/ARIMAX fitting, changepoint detection, or causal claim has begun.
+See the
+[Phase 3 exploratory-dynamics report](docs/CLEVELAND_CORRAL_PHASE3_EXPLORATORY_DYNAMICS.md)
 and the [active execution plan](docs/exec-plans/active/PROJECT_EXECUTION_PLAN.md).
 
 ## Quick start on Windows
@@ -58,6 +60,13 @@ After setup, reproduce the local Phase 2 data layers from the official release:
 ./.venv/Scripts/python.exe ./scripts/inspect_cleveland_corral_archives.py
 ./.venv/Scripts/python.exe ./scripts/build_phase2_interim.py
 ./.venv/Scripts/python.exe ./scripts/verify_phase2_data.py
+```
+
+Then reproduce and verify Phase 3:
+
+```powershell
+./.venv/Scripts/python.exe ./scripts/build_phase3_analysis.py
+./.venv/Scripts/python.exe ./scripts/verify_phase3_outputs.py
 ```
 
 Activate the environment for an interactive session:
