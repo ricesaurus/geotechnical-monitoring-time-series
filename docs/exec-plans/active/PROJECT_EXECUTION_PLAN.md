@@ -2,7 +2,7 @@
 
 **Project:** California Landslide Monitoring Time-Series Analysis  
 **Primary intended site:** USGS Cleveland Corral, El Dorado County, California  
-**Active phase:** Phase 1 — complete; stopped before Phase 2
+**Active phase:** Phase 2 — complete; stopped before Phase 3
 
 **Last updated:** 2026-08-20
 
@@ -10,6 +10,21 @@ This is the single source of truth for current execution state. The project scop
 `docs/PROJECT_SPEC.md`; the long-term curriculum is in `docs/LEARNING_ROADMAP.md`.
 
 ## Actual current state
+
+Phase 2 began from verified `main` commit
+`bc0fc8eeaad584857aa92b390b4d1ab18b83250e`, which matched a freshly fetched
+`origin/main` with a clean working tree after Phase 1 pull request
+[#1](https://github.com/ricesaurus/geotechnical-monitoring-time-series/pull/1) was
+confirmed merged. Work is isolated on `phase/2-ingestion-qc`. Acquisition, archive
+inspection, ingestion, quality-control implementation, and actual-coverage assessment
+are complete. The official raw resources are preserved locally and checksum-verified;
+observation-bearing raw and interim data remain git-ignored. Reusable code, 12 tests,
+aggregate-only provenance/QC summaries, the Phase 2 report, and learning documentation
+are complete. The decision is to retain the middle core as primary and the segmented
+pre-topple toe set as secondary. Local publication validation passes; branch/PR/CI
+details will be recorded after publication. Phase 3 has not started.
+
+### Phase 1 completion baseline
 
 Phase 1 began from verified `main` commit
 `432250c33e5160504d9df14b5ef3e72c4090f927`, which matched a freshly fetched
@@ -57,6 +72,61 @@ verified through the connected GitHub capability, and its `quality-checks` Actio
 
 Optional spectral analysis may be added only in a later assigned phase if sampling,
 record length, and the engineering question support it.
+
+## Phase 2 acceptance criteria
+
+- [x] Phase 1 PR #1 is merged; freshly fetched `main` exactly matched `origin/main` at
+  `bc0fc8eeaad584857aa92b390b4d1ab18b83250e` with a clean tree before branching.
+- [x] Only the official 15-minute archive, daily archive, and required sensor-description
+  table from DOI `10.5066/P1P9DMFX` are preserved in the git-ignored raw layer.
+- [x] Source sizes and MD5 values plus locally calculated SHA-256 values are verified and
+  recorded without machine-specific paths.
+- [x] All 49 CSV members are CRC-checked and inventoried with observed schemas and
+  timestamp-grid metadata before full sensor parsing.
+- [x] Reusable ingestion preserves original timestamp/value strings, fixed UTC−08:00
+  PST interpretation, UTC conversion, official IDs, field positions, and installation
+  segments for both 15-minute and daily products.
+- [x] Explicit flags cover parse failures, duplicates, ordering, irregular grids, gaps,
+  blank/malformed/non-finite/sentinel concerns, metadata ranges, water-year resets,
+  negative increments, maintenance, Sly Park estimates, replacements, relocations,
+  M1 successors, E5 topple/relocation, and P8/P9 installation changes.
+- [x] No observation is deleted, corrected, interpolated, imputed, smoothed, or spliced.
+- [x] Local interim Parquet outputs reproduce directly from preserved raw archives and
+  remain excluded from Git.
+- [x] Aggregate-only archive, coverage/QC, compatibility, segmentation, and
+  product-semantics summaries are version controlled and validated.
+- [x] Actual coverage and daily-product semantics are inspected; the middle core is
+  retained as primary, the pre-topple toe set as secondary, and short successor periods
+  are deferred as primary records.
+- [x] The Phase 2 report, README, data documentation, learning notes, and active plan are
+  updated; `scripts/check.ps1` and raw-manifest verification pass.
+- [ ] The audited branch is pushed, one verified draft PR is open to `main`, and its
+  GitHub Actions result is confirmed.
+- [x] Phase 3 has not started.
+
+## Completed Phase 2 work
+
+- Implemented fail-closed ScienceBase acquisition, official checksum validation,
+  streaming SHA-256, atomic downloads, and local receipts.
+- Detected and preserved rain-column schema defects in WY2011, WY2014, and WY2015 using
+  source field position and ordinal rather than header-name assumptions.
+- Parsed 5,356,490 selected 15-minute long-form rows and 78,108 daily long-form rows into
+  local, quality-flagged interim outputs.
+- Verified zero timestamp parse failures, within-member duplicates, malformed values,
+  non-finite values, and common sentinel candidates; quantified gaps, ordering defects,
+  blank cells, range concerns, resets, and documented regimes.
+- Confirmed daily medians within 10⁻¹² for all comparable non-rain values and established that
+  daily rain primarily follows the maximum cumulative 15-minute field, with 623
+  documented mismatches concentrated in four calendar years.
+- Quantified actual candidate overlap and revised the P8_C start to its first nonmissing
+  date, 2013-05-23, while preserving the earlier metadata installation date.
+- Added aggregate-artifact safety validation and local raw-manifest verification that do
+  not require network or raw data in ordinary CI.
+
+## Remaining Phase 2 work
+
+Publish the already validated branch, create one draft pull request, record its final
+commit and CI result here, and stop before Phase 3.
 
 ## Phase 1 acceptance criteria
 
@@ -143,12 +213,17 @@ None. Stop here; beginning Phase 1 requires a new assignment.
 - Repository creation used a checksum-verified official GitHub CLI 2.97.0 executable in a
   temporary directory because no system installation was available. It is not part of
   the project or repository.
-- Phase 2 must inspect exact archive members, schemas, timestamps, gaps, water-year
-  resets, the Sly Park estimate, and maintenance/relocation boundaries before finalizing
-  a series set.
 - The toe volumetric-water-content sensor depth is not stated, and daylight-saving
   treatment is not separately documented beyond the release statement that all times
   are Pacific Standard Time.
+- The daily rain product differs from the maximum published cumulative 15-minute field
+  on 623 dates in 1999–2000, 2007, and 2013; the fixed offsets are not explained by the
+  released schemas.
+- Cross-station 15-minute logger phases differ, and the successor toe period has no exact
+  common high-frequency timestamp across the selected middle/toe set. Alignment remains
+  an explicit Phase 3 decision.
+- Negative pressure-head and extensometer values are metadata range concerns, not proven
+  invalid observations, and require later sensor/engineering interpretation.
 - Official GPS pages conflict on whether the one-water-year coverage is 2016–2017 or
   2017–2018; its time zone and full coordinate datum also require metadata/file review.
 - Several official landing/catalog publication dates differ; provenance must retain the
@@ -157,10 +232,11 @@ None. Stop here; beginning Phase 1 requires a new assignment.
 
 ## Next phase (not started)
 
-Phase 2 should download only the official DOI-versioned primary monitoring archives,
-preserve raw files unchanged with checksums and access metadata, inspect schemas and
-timestamps before parsing, and build sensor-aware ingestion and quality flags for the
-recommended middle and toe sets. It must preserve official sensor and installation
-segments, identify PST encoding, resets, gaps, duplicates, sentinels, estimates,
-replacements, and relocations, avoid interpolation, and stop before substantive
-time-series analysis or modeling.
+Phase 3 should use only the Phase 2 quality-flagged, explicitly segmented records to
+characterize coverage, missingness patterns, distributions, trend, seasonality,
+stationarity, and within-series dependence for the retained middle core and pre-topple
+toe subset. Begin cross-series work on verified daily products; evaluate event-focused
+15-minute windows only with a declared, sensitivity-tested alignment rule that never
+bridges gaps, resets, estimates, replacements, relocations, or successor IDs. Do not
+begin forecasting, ARIMA/ARIMAX fitting, changepoint detection, interpolation, or causal
+claims.

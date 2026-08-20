@@ -1,0 +1,15 @@
+sensor_id,daily_measurement_role,tested_15_minute_role,tested_aggregation,daily_nonmissing_date_count,fifteen_minute_nonmissing_date_count,comparable_date_count,match_within_1e_12_count,mismatch_count,mismatch_calendar_years,maximum_absolute_difference,duplicate_daily_date_row_count
+mid_E2_B,daily_median,15_minute_observation,median,5627,5627,5627,5627,0,none,0.0,0
+mid_P1,daily_median,15_minute_observation,median,7574,7574,7574,7574,0,none,0.0,0
+mid_P2,daily_median,15_minute_observation,median,7379,7378,7378,7378,0,none,0.0,0
+mid_P5,daily_median,15_minute_observation,median,1952,1952,1952,1952,0,none,0.0,0
+mid_P6,daily_median,15_minute_observation,median,2476,2476,2476,2476,0,none,0.0,0
+mid_R,daily_rainfall_maximum,interval_precipitation,maximum,7584,7584,7584,210,7374,1997;1998;1999;2000;2001;2002;2003;2004;2005;2006;2007;2008;2009;2010;2011;2012;2013;2014;2015;2016;2017;2018,2273.49,0
+mid_R,daily_rainfall_maximum,cumulative_precipitation,maximum,7584,7584,7584,6961,623,1999;2000;2007;2013,1.528,0
+toe_E5_C,daily_median,15_minute_observation,median,3809,3809,3809,3809,0,none,0.0,0
+toe_M1_A,daily_median,15_minute_observation,median,3725,3725,3725,3725,0,none,0.0,0
+toe_M1_B,daily_median,15_minute_observation,median,132,132,132,132,0,none,0.0,0
+toe_P7_B,daily_median,15_minute_observation,median,4352,4352,4352,4352,0,none,0.0,0
+toe_P8_C,daily_median,15_minute_observation,median,1314,1314,1314,1314,0,none,0.0,0
+toe_P8_D,daily_median,15_minute_observation,median,200,200,200,200,0,none,0.0,0
+toe_P9_D,daily_median,15_minute_observation,median,1621,1621,1621,1621,0,none,0.0,0

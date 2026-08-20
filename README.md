@@ -33,13 +33,14 @@ proof of causation.
 
 ## Current status
 
-**Phase 1 — source and sensor audit complete.** Official USGS metadata establish
-precipitation/snowmelt, volumetric water content, groundwater pressure head, and
-surface-displacement records at Cleveland Corral. The metadata-only audit recommends a
-long middle-site set and a co-located toe subset for Phase 2 inspection. No measurement
-data have been downloaded, and Phase 2 has not started. See the
-[Cleveland Corral source audit](docs/data/CLEVELAND_CORRAL_SOURCE_AUDIT.md) and the
-[active execution plan](docs/exec-plans/active/PROJECT_EXECUTION_PLAN.md).
+**Phase 2 — ingestion and sensor-aware quality control complete.** The official
+15-minute and daily archives are preserved locally with verified checksums; reusable
+code reproduces quality-flagged interim data and aggregate-only coverage, schema,
+compatibility, and product-semantics summaries. The long middle core remains primary,
+and the pre-topple toe set remains a segmented secondary set. No interpolation or
+Phase 3 analysis has started. See the
+[Phase 2 ingestion and QC report](docs/data/CLEVELAND_CORRAL_PHASE2_INGESTION_QC.md)
+and the [active execution plan](docs/exec-plans/active/PROJECT_EXECUTION_PLAN.md).
 
 ## Quick start on Windows
 
@@ -48,6 +49,15 @@ From PowerShell in the project folder:
 ```powershell
 ./scripts/setup.ps1
 ./scripts/check.ps1
+```
+
+After setup, reproduce the local Phase 2 data layers from the official release:
+
+```powershell
+./.venv/Scripts/python.exe ./scripts/acquire_cleveland_corral.py
+./.venv/Scripts/python.exe ./scripts/inspect_cleveland_corral_archives.py
+./.venv/Scripts/python.exe ./scripts/build_phase2_interim.py
+./.venv/Scripts/python.exe ./scripts/verify_phase2_data.py
 ```
 
 Activate the environment for an interactive session:
