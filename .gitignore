@@ -1,0 +1,50 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+
+# Local environments
+.venv/
+venv/
+.env
+.env.*
+!.env.example
+
+# Credentials and private keys
+*.key
+*.pem
+*.p12
+*.pfx
+credentials*.json
+secrets*.json
+
+# Jupyter
+.ipynb_checkpoints/
+.ipython/
+.jupyter/
+
+# Editors and operating systems
+.idea/
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Local data (keep folder documentation and placeholders)
+data/raw/*
+!data/raw/.gitkeep
+data/interim/*
+!data/interim/.gitkeep
+data/processed/*
+!data/processed/.gitkeep
+
+# Temporary outputs
+tmp/
+*.log
+*.tmp
+*.bak
+~$*
