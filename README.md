@@ -33,10 +33,11 @@ proof of causation.
 
 ## Current status
 
-**Phase 0 — environment and repository setup.** The project foundation is being
-validated and published. No monitoring data have been downloaded. See the
-[active execution plan](docs/exec-plans/active/PROJECT_EXECUTION_PLAN.md) for current
-state; Phase 1 is the site and data-source audit.
+**Phase 0 — complete.** The project foundation is validated and published at
+[ricesaurus/geotechnical-monitoring-time-series](https://github.com/ricesaurus/geotechnical-monitoring-time-series).
+No monitoring data have been downloaded, and Phase 1 has not started. See the
+[active execution plan](docs/exec-plans/active/PROJECT_EXECUTION_PLAN.md) for the
+verified completion state and the next-phase objective.
 
 ## Quick start on Windows
 

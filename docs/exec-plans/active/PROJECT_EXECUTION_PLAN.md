@@ -2,7 +2,7 @@
 
 **Project:** California Landslide Monitoring Time-Series Analysis  
 **Primary intended site:** USGS Cleveland Corral, El Dorado County, California  
-**Active phase:** Phase 0 — project foundation  
+**Active phase:** Phase 0 — complete; stopped before Phase 1  
 **Last updated:** 2026-08-20
 
 This is the single source of truth for current execution state. The project scope is in
@@ -12,9 +12,13 @@ This is the single source of truth for current execution state. The project scop
 
 The existing Python 3.12 scaffold, local `.venv`, package layout, checks, tests, data
 folders, notebook guidance, VS Code settings, and GitHub Actions workflow have been
-inspected. No USGS records have been downloaded and no analysis has started. Phase 0
-documentation and local validation are complete. Git is initialized on `main`; the
-staged-file audit, initial commit, and publication remain to be completed and verified.
+inspected. No USGS records have been downloaded and no analysis has started.
+`./scripts/setup.ps1` reran safely and `./scripts/check.ps1` passed Ruff, two tests, and
+environment verification. Git is initialized on `main`; the audited initial commit
+`cfefa630520329997d6fdff0ea3fefa15714c4f4` is published to the public
+`ricesaurus/geotechnical-monitoring-time-series` repository. The remote commit was
+verified through the connected GitHub capability, and its `quality-checks` Actions run
+32342816398 completed successfully.
 
 ## Phases and dependencies
 
@@ -50,11 +54,11 @@ record length, and the engineering question support it.
   treats spectral work as optional, and separates association/prediction from causation.
 - [x] Git excludes environments, caches, datasets, credentials, secrets, and temporary or
   machine-specific files while preserving data documentation and placeholders.
-- [ ] Git is initialized on `main`; the exact staged set is audited and committed.
-- [ ] The public `ricesaurus/geotechnical-monitoring-time-series` repository exists with
+- [x] Git is initialized on `main`; the exact staged set is audited and committed.
+- [x] The public `ricesaurus/geotechnical-monitoring-time-series` repository exists with
   the requested description, `origin` is correct, and `main` is pushed.
-- [ ] The remote commit and initial GitHub Actions result are inspected.
-- [ ] The working tree is clean and Phase 1 has not started.
+- [x] The remote commit and initial GitHub Actions result are inspected.
+- [x] The working tree is clean and Phase 1 has not started.
 
 ## Completed Phase 0 work
 
@@ -63,21 +67,24 @@ record length, and the engineering question support it.
 - Defined durable repository rules, project scope, and cumulative Phase 0 learning notes.
 - Reconciled the README and planning documentation around Cleveland Corral and causal
   limits.
+- Initialized `main`, audited the exact staged paths and content for excluded material,
+  and committed the Phase 0 foundation.
+- Created the requested public GitHub repository, configured `origin`, pushed `main`,
+  verified the remote commit, and confirmed the initial Actions run succeeded.
 - Kept all data acquisition and substantive analysis out of Phase 0.
 
 ## Remaining Phase 0 work
 
-- Inspect the exact staged files and create the initial commit.
-- Create and verify the public GitHub repository, push `main`, and inspect Actions.
-- Update this plan with the verified final state and stop before Phase 1.
+None. Stop here; beginning Phase 1 requires a new assignment.
 
 ## Blockers and open decisions
 
 - Git treats this OneDrive workspace as having different filesystem ownership, so Git
   commands use a repository-scoped safe-directory override rather than changing the
   user's global Git configuration.
-- GitHub CLI is not installed. Use the connected GitHub capability where possible; install
-  and authenticate the CLI only if repository creation or pushing requires it.
+- Repository creation used a checksum-verified official GitHub CLI 2.97.0 executable in a
+  temporary directory because no system installation was available. It is not part of
+  the project or repository.
 - Phase 1 must decide which official Cleveland Corral records and sensor series are
   compatible. Phase 0 makes no sensor selection or data-availability claim.
 - The need for spectral analysis remains open and data-dependent.
