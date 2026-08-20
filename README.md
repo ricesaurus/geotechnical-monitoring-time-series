@@ -33,11 +33,13 @@ proof of causation.
 
 ## Current status
 
-**Phase 0 — complete.** The project foundation is validated and published at
-[ricesaurus/geotechnical-monitoring-time-series](https://github.com/ricesaurus/geotechnical-monitoring-time-series).
-No monitoring data have been downloaded, and Phase 1 has not started. See the
-[active execution plan](docs/exec-plans/active/PROJECT_EXECUTION_PLAN.md) for the
-verified completion state and the next-phase objective.
+**Phase 1 — source and sensor audit complete.** Official USGS metadata establish
+precipitation/snowmelt, volumetric water content, groundwater pressure head, and
+surface-displacement records at Cleveland Corral. The metadata-only audit recommends a
+long middle-site set and a co-located toe subset for Phase 2 inspection. No measurement
+data have been downloaded, and Phase 2 has not started. See the
+[Cleveland Corral source audit](docs/data/CLEVELAND_CORRAL_SOURCE_AUDIT.md) and the
+[active execution plan](docs/exec-plans/active/PROJECT_EXECUTION_PLAN.md).
 
 ## Quick start on Windows
 
@@ -66,7 +68,7 @@ versioned copy of committed files.
 ## Repository layout
 
 ```text
-data/                  Local data layers and provenance notes
+data/                  Local data layers and version-controlled provenance metadata
 docs/                  Specification, active plan, and learning records
 notebooks/             Numbered exploratory and instructional notebooks
 reports/figures/       Curated figures suitable for the final report
