@@ -2,14 +2,27 @@
 
 **Project:** California Landslide Monitoring Time-Series Analysis  
 **Primary intended site:** USGS Cleveland Corral, El Dorado County, California  
-**Active phase:** Phase 3 — complete; stopped before Phase 4
+**Active phase:** Phase 4 — forecasting, regime analysis, and chronological validation in progress
 
-**Last updated:** 2026-08-20
+**Last updated:** 2026-08-27
 
 This is the single source of truth for current execution state. The project scope is in
 `docs/PROJECT_SPEC.md`; the long-term curriculum is in `docs/LEARNING_ROADMAP.md`.
 
 ## Actual current state
+
+Phase 4 began from verified `main` commit
+`e0ce20b02e16f1c95848417fac34e066b86ef7b7`, which exactly matched a freshly fetched
+`origin/main` with a clean working tree. The published pull-request head for Phase 3
+and the `main` squash commit have identical trees, and `main` identifies the merge as
+pull request #3. Before branching, all three preserved raw resources passed SHA-256
+verification, the full Phase 2 ingestion reproduced 5,356,490 selected 15-minute rows
+and 78,108 selected daily rows, and the complete Phase 3 workflow reproduced its
+97,868 daily-analysis rows, 3,974 event-match rows, 12 aggregate tables, and nine
+figures. All Phase 2 and Phase 3 output validators passed. Work is isolated on
+`phase/4-forecasting-validation`. The frozen Phase 4 forecasting contract is in
+`docs/phase4/FORECASTING_CONTRACT.md`; no Phase 4 model comparison had been run when
+that contract was frozen.
 
 Phase 3 began from verified `main` commit
 `9950009e83fec4d87ccbf814553f80f2be5968ac`, which matched a freshly fetched
@@ -91,6 +104,29 @@ verified through the connected GitHub capability, and its `quality-checks` Actio
 
 Optional spectral analysis may be added only in a later assigned phase if sampling,
 record length, and the engineering question support it.
+
+## Phase 4 acceptance criteria
+
+- [x] Phase 3 PR #3 is merged into a freshly fetched `main`; local `main` exactly
+  matched `origin/main` at `e0ce20b02e16f1c95848417fac34e066b86ef7b7` with a clean
+  tree before branching.
+- [x] Raw SHA-256 verification, a full Phase 2 rebuild and verification, and a full
+  Phase 3 rebuild and output verification pass before modeling.
+- [x] A version-controlled forecasting contract freezes targets, windows, origins,
+  candidates, forecast-time feature rules, metrics, intervals, selection, failure
+  handling, and changepoint sensitivities before comparisons.
+- [ ] Transparent baselines and the predeclared ARIMA/ARIMAX candidates are evaluated
+  on leakage-free rolling origins at 1-, 2-, and 7-day horizons where defensible.
+- [ ] Aggregate forecast error, uncertainty, residual dependence, calibration,
+  coverage, stability, and coefficient/failure diagnostics are complete and verified.
+- [ ] Changepoints are analyzed separately inside exact contiguous target runs and
+  compared conservatively with metadata and event context.
+- [ ] Reusable code, synthetic-fixture tests, deterministic build and validator
+  scripts, aggregate-only tables, inspected figures, an executed notebook, report,
+  README, data documentation, learning notes, and this plan are complete.
+- [ ] The audited branch is pushed, exactly one verified draft PR targets `main`, and
+  the final commit's GitHub Actions result is confirmed successful.
+- [ ] Phase 5 has not started.
 
 ## Phase 3 acceptance criteria
 
