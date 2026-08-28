@@ -2,9 +2,9 @@
 
 **Project:** California Landslide Monitoring Time-Series Analysis  
 **Primary intended site:** USGS Cleveland Corral, El Dorado County, California  
-**Active phase:** Phase 4 — forecasting, regime analysis, and chronological validation in progress
+**Active phase:** Phase 4 — analysis complete; publication audit in progress
 
-**Last updated:** 2026-08-27
+**Last updated:** 2026-08-29
 
 This is the single source of truth for current execution state. The project scope is in
 `docs/PROJECT_SPEC.md`; the long-term curriculum is in `docs/LEARNING_ROADMAP.md`.
@@ -22,7 +22,16 @@ and 78,108 selected daily rows, and the complete Phase 3 workflow reproduced its
 figures. All Phase 2 and Phase 3 output validators passed. Work is isolated on
 `phase/4-forecasting-validation`. The frozen Phase 4 forecasting contract is in
 `docs/phase4/FORECASTING_CONTRACT.md`; no Phase 4 model comparison had been run when
-that contract was frozen.
+that contract was frozen. The complete rolling evaluation now accounts for 10,746
+scheduled model/horizon rows, 6,123 fitted-parameter rows, and 90 raw changepoint
+detections in ignored processed outputs. Fifteen aggregate tables and nine visually
+inspected figures pass the Phase 4 validator, and the restart-and-run notebook executes
+without analysis errors. The frozen earlier-period selection retained zero change,
+AR(1), and AR(2) for the middle horizons and persistence/ARMA(1,1) for the toe horizons;
+zero change, tied with the expanding median, nevertheless has the lowest observed MAE
+at all six untouched later evaluations. No model was reselected. The remaining Phase 4
+work is the final repository audit, publication, draft pull request, and successful
+remote quality check.
 
 Phase 3 began from verified `main` commit
 `9950009e83fec4d87ccbf814553f80f2be5968ac`, which matched a freshly fetched
@@ -115,18 +124,44 @@ record length, and the engineering question support it.
 - [x] A version-controlled forecasting contract freezes targets, windows, origins,
   candidates, forecast-time feature rules, metrics, intervals, selection, failure
   handling, and changepoint sensitivities before comparisons.
-- [ ] Transparent baselines and the predeclared ARIMA/ARIMAX candidates are evaluated
+- [x] Transparent baselines and the predeclared ARIMA/ARIMAX candidates are evaluated
   on leakage-free rolling origins at 1-, 2-, and 7-day horizons where defensible.
-- [ ] Aggregate forecast error, uncertainty, residual dependence, calibration,
+- [x] Aggregate forecast error, uncertainty, residual dependence, calibration,
   coverage, stability, and coefficient/failure diagnostics are complete and verified.
-- [ ] Changepoints are analyzed separately inside exact contiguous target runs and
+- [x] Changepoints are analyzed separately inside exact contiguous target runs and
   compared conservatively with metadata and event context.
-- [ ] Reusable code, synthetic-fixture tests, deterministic build and validator
+- [x] Reusable code, synthetic-fixture tests, deterministic build and validator
   scripts, aggregate-only tables, inspected figures, an executed notebook, report,
   README, data documentation, learning notes, and this plan are complete.
 - [ ] The audited branch is pushed, exactly one verified draft PR targets `main`, and
   the final commit's GitHub Actions result is confirmed successful.
-- [ ] Phase 5 has not started.
+- [x] Phase 5 has not started.
+
+## Completed Phase 4 work
+
+- Froze the target, window, origin, candidate, feature-availability, selection,
+  uncertainty, failure, and changepoint contract before running comparisons.
+- Evaluated four transparent baselines and the predeclared ARIMA/ARIMAX candidates at
+  fixed 14-day expanding origins and 1-, 2-, and 7-day horizons where features were
+  knowable.
+- Preserved the frozen selection result while documenting that zero change, tied with
+  the expanding median, achieved the lowest observed later MAE in all six long-window
+  evaluations; all paired uncertainty intervals for nonzero retained models favored
+  zero.
+- Recorded interval calibration, residual dependence and tails, water-year/season/
+  high-movement/early-late errors, parameter paths, coverage, and every numerical or
+  contractual forecast failure without silent replacement.
+- Restricted changepoint sensitivity to 14 exact eligible runs and grouped 90 raw
+  detections into 42 context-labeled candidates; only four groups had support from
+  both method families, so no physical boundary was declared.
+- Produced and validated 15 aggregate-only tables, nine visually inspected figures,
+  three ignored processed Parquet products, an executed instructional notebook, a
+  report, learning notes, and reusable synthetic-fixture tests.
+
+## Remaining Phase 4 work
+
+- Complete the final repository audit, publish the branch, open exactly one verified
+  draft pull request to `main`, and confirm the final GitHub Actions result succeeds.
 
 ## Phase 3 acceptance criteria
 
@@ -337,15 +372,20 @@ None. Stop here; beginning Phase 1 requires a new assignment.
 - Several official landing/catalog publication dates differ; provenance must retain the
   stable DOI, item ID, access date, and observed date discrepancy.
 - The need for spectral analysis remains open and data-dependent.
+- Later chronological evaluation does not support incremental long-window MAE skill
+  over zero change for the frozen dynamic models or rain-conditioned candidate. The
+  short post-rain-resume check is small, interval estimates are often conservative,
+  rare high-movement origins are too few for stable skill claims, and most changepoint
+  groups are method-dependent.
 
 ## Next phase (not started)
 
-Using only Phase 3's eligible, regime-specific daily transformations, develop and
-chronologically validate leakage-free displacement-change forecast baselines and
-parsimonious ARIMA/ARIMAX candidates for the stable middle and long pre-topple toe
-windows; compare persistence, zero-change, and seasonal baselines at identical rolling
-origins and horizons; admit hydrologic predictors only when their availability and
-Phase 3 lag evidence justify them; evaluate residual dependence, interval calibration,
-and stability; investigate metadata-informed changepoints separately without crossing
-instrument regimes; and stop before final engineering synthesis or any causal or
-operational-warning claim.
+Using only verified Phase 1–4 artifacts, synthesize the Cleveland Corral findings into
+a reproducible engineering-facing report that explicitly separates observed data,
+statistical inference, engineering interpretation, and speculation; reconcile the
+negative long-window forecasting result, uncertainty, temporal instability,
+changepoint sensitivity, sensor and missingness limitations, and the exploratory
+rain-response evidence without new model selection, threshold optimization, causal
+claims, or operational-warning recommendations; reproduce and inspect every cited
+table and figure; and stop before any deployment, alarm design, or engineering design
+decision.

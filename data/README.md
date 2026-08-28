@@ -57,6 +57,25 @@ diagnostics only; they contain no timestamped observation rows. Reproduce them w
 ./.venv/Scripts/python.exe ./scripts/verify_phase3_outputs.py
 ```
 
+Phase 4 local processed layout:
+
+- `processed/cleveland_corral/phase4_rolling_forecasts.parquet`: ignored scheduled
+  rolling-origin forecasts, outcomes, eligibility, intervals, and explicit statuses;
+- `processed/cleveland_corral/phase4_rolling_parameters.parquet`: ignored fitted
+  parameter paths for stability diagnostics;
+- `processed/cleveland_corral/phase4_changepoint_detections.parquet`: ignored raw
+  run-specific changepoint detections across predeclared sensitivity settings.
+
+These observation- or origin-bearing files remain git-ignored. The 15 version-controlled
+tables under `reports/tables/phase4/` contain aggregate configurations, metrics,
+diagnostics, uncertainty, selection decisions, and grouped changepoint context only.
+Reproduce and verify them with:
+
+```powershell
+./.venv/Scripts/python.exe ./scripts/build_phase4_analysis.py
+./.venv/Scripts/python.exe ./scripts/verify_phase4_outputs.py
+```
+
 Every downloaded dataset must be accompanied by a versioned provenance record that
 contains at least:
 

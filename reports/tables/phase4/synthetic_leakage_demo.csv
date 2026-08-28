@@ -1,0 +1,3 @@
+data_origin,validation_design,sample_size,regime_shift_step,training_count,test_count,training_includes_post_shift,mae,rmse,bias
+synthetic_seed_170_not_usgs,chronological_split,300,220,210,90,False,4.695688886092125,4.996289926844485,4.6292831701674135
+synthetic_seed_170_not_usgs,random_split_leaks_later_regime,300,220,210,90,True,2.0226285060748843,2.4923464912808586,0.2559130564242564

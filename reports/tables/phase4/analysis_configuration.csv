@@ -1,0 +1,21 @@
+parameter,value
+contract_frozen,2026-08-27 before Phase 4 model comparison
+time_zone,fixed PST (UTC-08:00) local calendar dates
+targets,Phase 3 eligible daily first differences for mid_E2_B and toe_E5_C
+horizons_days,1;2;7
+origin_schedule,"every 14 calendar days on fixed, never-shifted anchors"
+minimum_training,365 calendar days and 300 eligible target observations
+window_rule,expanding complete daily calendar; missing targets remain missing
+core_origin_rule,eligible origin-through-target path inside one target segment and water year
+primary_metric,MAE
+secondary_metrics,RMSE;bias;training-only MASE
+high_movement,absolute target above origin-specific training q95
+seasons,wet October-April; dry May-September
+interval_levels,80%;95%
+baseline_intervals,empirical prior realized residuals only; minimum 30
+arima_intervals,statsmodels model-based state-space intervals
+arimax_availability,toe rain lag 2 available only at horizons 1 and 2; horizon 7 skipped
+performance_difference_uncertainty,seed 170 moving-block bootstrap; 1000 replicates; block 3 origins
+selection,earlier stage common origins; 80% coverage; 5% complexity tie rule
+changepoints,exact runs >=180 days; min segment 30; PELT and Binseg sensitivity
+synthetic_demo,seed 170 regime-shift leakage example; not USGS data

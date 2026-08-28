@@ -25,3 +25,10 @@ Phase 3 uses one restart-and-run notebook,
 `02_phase3_exploratory_dynamics.ipynb`, to orchestrate and explain the reusable Phase 3
 build. It covers the exploratory, decomposition/stationarity, ACF/PACF, and lagged
 cross-correlation topics together so masks and sign conventions remain consistent.
+
+Phase 4 uses one executed restart-and-run notebook,
+`03_phase4_forecasting_validation.ipynb`, to explain the frozen chronological design,
+baseline and ARIMA/ARIMAX comparisons, forecast-time availability, prediction
+intervals, residual and coefficient diagnostics, changepoint sensitivity, and the
+synthetic leakage demonstration. It displays aggregate outputs; reusable logic and
+observation-bearing rolling results remain outside the notebook.
