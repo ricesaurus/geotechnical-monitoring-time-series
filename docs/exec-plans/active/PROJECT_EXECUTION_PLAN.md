@@ -30,8 +30,13 @@ without analysis errors. The frozen earlier-period selection retained zero chang
 AR(1), and AR(2) for the middle horizons and persistence/ARMA(1,1) for the toe horizons;
 zero change, tied with the expanding median, nevertheless has the lowest observed MAE
 at all six untouched later evaluations. No model was reselected. The remaining Phase 4
-work is the final repository audit, publication, draft pull request, and successful
-remote quality check.
+implementation is published in verified draft pull request
+[#4](https://github.com/ricesaurus/geotechnical-monitoring-time-series/pull/4), which
+targets `main` from `phase/4-forecasting-validation` and is mergeable. Its first remote
+check correctly exposed that one committed-artifact test requested ignored local
+Parquet products in a clean checkout; the test now validates committed artifacts only,
+while `scripts/verify_phase4_outputs.py` continues to require all three local processed
+products after a full build. The final remote quality check remains pending.
 
 Phase 3 began from verified `main` commit
 `9950009e83fec4d87ccbf814553f80f2be5968ac`, which matched a freshly fetched
@@ -160,8 +165,8 @@ record length, and the engineering question support it.
 
 ## Remaining Phase 4 work
 
-- Complete the final repository audit, publish the branch, open exactly one verified
-  draft pull request to `main`, and confirm the final GitHub Actions result succeeds.
+- Publish the CI portability correction and confirm the final GitHub Actions result
+  succeeds on the verified draft pull request.
 
 ## Phase 3 acceptance criteria
 

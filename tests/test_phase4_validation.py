@@ -6,7 +6,9 @@ from geotech_ts.phase4_validation import validate_phase4_outputs
 
 
 def test_phase4_outputs_are_present_aggregate_only_and_valid() -> None:
-    assert validate_phase4_outputs(PROJECT_ROOT, require_local_processed=True) == []
+    # CI checks only version-controlled deliverables. The explicit local verifier also
+    # requires the ignored observation-bearing Parquet products after a full build.
+    assert validate_phase4_outputs(PROJECT_ROOT, require_local_processed=False) == []
 
 
 def test_phase4_validator_rejects_observation_columns_and_invalid_coverage(
