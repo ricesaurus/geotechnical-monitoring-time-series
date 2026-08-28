@@ -33,16 +33,20 @@ proof of causation.
 
 ## Current status
 
-**Phase 3 — exploratory structure and dynamics complete.** Reusable, tested code now
-builds explicit analysis masks, two defensible precipitation transformations,
-segment-aware coverage/distribution/decomposition/stationarity/ACF/PACF diagnostics,
-exact-date daily lag sensitivity, and rain-selected 15-minute event alignment. Twelve
-aggregate tables, nine inspected figures, and a restart-and-run notebook reproduce the
-findings without committing observation rows. No interpolation, successor splicing,
-forecasting, ARIMA/ARIMAX fitting, changepoint detection, or causal claim has begun.
-See the
-[Phase 3 exploratory-dynamics report](docs/CLEVELAND_CORRAL_PHASE3_EXPLORATORY_DYNAMICS.md)
-and the [active execution plan](docs/exec-plans/active/PROJECT_EXECUTION_PLAN.md).
+**Phase 4 — forecasting, regime analysis, and chronological validation complete.** A
+forecasting contract was frozen before comparison. Reusable, tested code now evaluates
+transparent baselines and predeclared ARIMA/ARIMAX candidates at fixed rolling origins,
+with forecast-time feature controls, common-origin uncertainty, interval and residual
+diagnostics, explicit failures, coefficient stability, and separate changepoint
+sensitivity. The central later-evaluation result is negative: zero change, tied with
+the expanding median, has the lowest observed MAE for both displacement targets at all
+three horizons. Fifteen aggregate-only tables, nine inspected figures, and an executed
+restart-and-run notebook reproduce the findings without committing observation rows.
+No model was reselected after evaluation, and no causal, threshold, warning, or design
+claim is made. See the
+[Phase 4 forecasting report](docs/CLEVELAND_CORRAL_PHASE4_FORECASTING_VALIDATION.md),
+the [frozen contract](docs/phase4/FORECASTING_CONTRACT.md), and the
+[active execution plan](docs/exec-plans/active/PROJECT_EXECUTION_PLAN.md).
 
 ## Quick start on Windows
 
@@ -67,6 +71,13 @@ Then reproduce and verify Phase 3:
 ```powershell
 ./.venv/Scripts/python.exe ./scripts/build_phase3_analysis.py
 ./.venv/Scripts/python.exe ./scripts/verify_phase3_outputs.py
+```
+
+Then reproduce and verify Phase 4 (the rolling fits can take several minutes):
+
+```powershell
+./.venv/Scripts/python.exe ./scripts/build_phase4_analysis.py
+./.venv/Scripts/python.exe ./scripts/verify_phase4_outputs.py
 ```
 
 Activate the environment for an interactive session:

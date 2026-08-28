@@ -276,3 +276,120 @@ stationarity and dependence, and understanding linear-process signatures. The
 geotechnical application adds essential constraints: fixed-PST timing, water-year
 resets, documented installations, physical location/depth, and the difference between
 an exploratory association and a landslide mechanism.
+
+## Phase 4 — forecasting, validation, and regime sensitivity
+
+### A forecast is defined by information time
+
+A forecast is not just a prediction paired with a later observation. It must declare
+the origin date, target date, horizon, training window, and exactly what was knowable at
+the origin. A rolling-origin design repeatedly fits on the past and evaluates on the
+future, preserving time order. Cleveland Corral origins stay on a fixed 14-day calendar
+schedule: a missing or boundary-crossing target is marked ineligible rather than moving
+the origin to a more convenient date.
+
+The rain-lag-2 ARIMAX example makes feature availability concrete. At a one-day horizon,
+the needed rain value is from the day before the origin; at two days, it is origin-day
+rain. At seven days, the same equation would require rain after the origin, so the
+forecast is unavailable. Using that future rain would answer a conditional scenario
+question, not the declared real-time forecast question.
+
+### Why random splits leak time-series regimes
+
+Random train/test splitting assumes observations are exchangeable enough that their
+order can be ignored. A time series with a later mean, variance, seasonal, sensor, or
+physical regime violates that premise. Random training can then contain samples from
+the future regime and make performance look better than it would have been at the
+historical forecast origin. The seed-170 synthetic example deliberately shows this:
+the same mean model has MAE 2.023 under a leaking random split and 4.696 under a
+chronological split made before the shift. It is a learning example, not a USGS result.
+
+### Baselines define whether complexity earns its place
+
+Zero change, persistence, an expanding median, and a same-calendar-date prior-year
+value answer different simple forecasting questions. A candidate model has practical
+value only if it improves on defensible baselines at identical origins. Comparing
+different successful-origin sets can reward a model for skipping hard dates, so Phase
+4 first enforces coverage and then uses common-origin errors.
+
+Selection and evaluation have different jobs. The earlier selection period chooses a
+model using predeclared rules; the later evaluation estimates how that frozen choice
+generalizes. Looking at evaluation and then changing the model would turn the test set
+into another tuning set. At Cleveland Corral, frozen AR and ARMA choices lost to zero
+change later. Preserving that negative result is the point of honest validation.
+
+### ARIMA on an already differenced engineering target
+
+The modeled target is a valid daily first difference of cumulative displacement. The
+ARIMA integration order is therefore fixed at `d=0`; applying another difference would
+change the estimand and can overdifference a short-memory change series. AR(1), AR(2),
+MA/AR combinations, and a weekly seasonal AR term are alternative dependence
+structures for the change target, not automatic upgrades over a baseline.
+
+ARIMAX estimates conditional linear association after target persistence, but a stable
+positive rain coefficient does not guarantee lower forecast error and does not prove
+rain caused movement. Predictive increment, coefficient interpretation, and causal
+identification are three distinct questions.
+
+### Error scales, paired uncertainty, and rare movement
+
+MAE averages absolute error in target units and is less dominated by rare extremes
+than RMSE. Bias retains direction. MASE divides absolute error by a naive training
+scale computed using only the origin's past, which permits comparison without allowing
+future variability into the denominator. No single metric is a physical loss function
+unless the decision problem says so.
+
+Forecast errors at neighboring rolling origins are temporally related. Phase 4 uses a
+moving-block bootstrap of paired model-minus-zero absolute-error differences, keeping
+short local dependence and common origins together. An interval wholly above zero
+means the candidate had larger MAE than zero under that design; it is not a universal
+proof that the candidate can never help.
+
+High movement is also origin-specific: the threshold is the 95th percentile of
+absolute target changes available in training at that origin. A global threshold
+computed from the full record would leak later extremes backward. The later validation
+contains too few high-movement origins for a stable extreme-event skill claim.
+
+### Prediction intervals need calibration and sharpness
+
+An 80% interval should cover about 80% of future outcomes over repeated comparable
+forecasts, but coverage alone is insufficient. Very wide intervals can cover nearly
+everything and still be unhelpful. Width and the Winkler score add a sharpness penalty,
+while separate 80% and 95% checks expose systematic over- or under-coverage.
+
+Baseline intervals use only residuals already realized before each origin. Model-based
+ARIMA intervals rely on the fitted state-space distribution. Heavy-tailed displacement
+errors can make nominal Gaussian intervals conservative in ordinary periods yet still
+vulnerable around rare excursions. Calibration with only dozens of origins is itself
+uncertain.
+
+### Residual diagnostics and coefficient paths
+
+A useful residual should have limited remaining sequence dependence, but a non-small
+Ljung–Box p-value is not proof of independence. Small samples, sparse origins, and
+heavy tails reduce diagnostic power. Residual ACF, skew, kurtosis, quantiles, and
+failure coverage must be interpreted together.
+
+Expanding coefficients answer how the fitted relationship changes as more history is
+admitted. A path that shifts sharply early and is tight later is not stable across the
+whole record. It may reflect physical evolution, event composition, measurement
+regimes, missingness, or model misspecification. Phase 4 reports the path without
+choosing among those explanations.
+
+### Changepoint algorithms propose dates; they do not name causes
+
+PELT penalizes added breaks, while binary segmentation is asked for a fixed number of
+breaks. Their outputs depend on penalty, break count, minimum segment length, cost
+function, and the exact data run. Phase 4 detects only inside contiguous eligible runs
+within one segment and water year, then groups nearby dates and labels cross-method,
+within-method, or single-setting support.
+
+A candidate near a rain-selected event or large displacement episode is event-aligned
+context. It is not evidence that rain caused a new slope regime. Most Cleveland Corral
+candidates are method-dependent, so the defensible output is a sensitivity inventory,
+not a unique physical segmentation.
+
+These choices extend the time-series curriculum from description to honest forecast
+evaluation: define the information set, compare against meaningful baselines, preserve
+chronology, diagnose uncertainty and failures, and keep statistical evidence separate
+from geotechnical interpretation and speculation.

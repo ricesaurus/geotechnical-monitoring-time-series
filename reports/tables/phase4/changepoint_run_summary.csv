@@ -1,0 +1,15 @@
+run_id,window_id,target_id,segment_id,water_year,run_start_date,run_end_date,run_length_days,sensitivity_setting_count,raw_detection_count,candidate_group_count
+middle_stable_2009_2016__mid_E2_B_s06_hx_vpa_400_27090342__WY2009__r2,middle_stable_2009_2016,mid_E2_B,mid_E2_B_s06_hx_vpa_400_27090342,2009,2009-02-19,2009-09-25,219,6,6,3
+middle_stable_2009_2016__mid_E2_B_s06_hx_vpa_400_27090342__WY2010__r3,middle_stable_2009_2016,mid_E2_B,mid_E2_B_s06_hx_vpa_400_27090342,2010,2010-01-27,2010-09-30,247,6,6,3
+middle_stable_2009_2016__mid_E2_B_s06_hx_vpa_400_27090342__WY2012__r1,middle_stable_2009_2016,mid_E2_B,mid_E2_B_s06_hx_vpa_400_27090342,2012,2011-10-02,2012-08-21,325,6,6,3
+middle_stable_2009_2016__mid_E2_B_s06_hx_vpa_400_27090342__WY2013__r1,middle_stable_2009_2016,mid_E2_B,mid_E2_B_s06_hx_vpa_400_27090342,2013,2012-10-03,2013-04-18,198,6,8,3
+middle_stable_2009_2016__mid_E2_B_s06_hx_vpa_400_27090342__WY2014__r3,middle_stable_2009_2016,mid_E2_B,mid_E2_B_s06_hx_vpa_400_27090342,2014,2014-04-03,2014-09-30,181,6,6,3
+middle_stable_2009_2016__mid_E2_B_s06_hx_vpa_400_27090342__WY2015__r1,middle_stable_2009_2016,mid_E2_B,mid_E2_B_s06_hx_vpa_400_27090342,2015,2014-10-02,2015-04-07,188,6,6,3
+toe_pre_topple_long__toe_E5_C_s01_pre_topple__WY2007__r1,toe_pre_topple_long,toe_E5_C,toe_E5_C_s01_pre_topple,2007,2006-12-01,2007-09-30,304,6,6,3
+toe_pre_topple_long__toe_E5_C_s01_pre_topple__WY2008__r3,toe_pre_topple_long,toe_E5_C,toe_E5_C_s01_pre_topple,2008,2007-12-31,2008-09-30,275,6,6,3
+toe_pre_topple_long__toe_E5_C_s01_pre_topple__WY2009__r3,toe_pre_topple_long,toe_E5_C,toe_E5_C_s01_pre_topple,2009,2009-02-19,2009-09-30,224,6,6,3
+toe_pre_topple_long__toe_E5_C_s01_pre_topple__WY2010__r2,toe_pre_topple_long,toe_E5_C,toe_E5_C_s01_pre_topple,2010,2010-01-23,2010-09-30,251,6,10,3
+toe_pre_topple_long__toe_E5_C_s01_pre_topple__WY2012__r1,toe_pre_topple_long,toe_E5_C,toe_E5_C_s01_pre_topple,2012,2011-10-02,2012-05-15,227,6,6,3
+toe_pre_topple_long__toe_E5_C_s01_pre_topple__WY2014__r2,toe_pre_topple_long,toe_E5_C,toe_E5_C_s01_pre_topple,2014,2014-01-14,2014-09-30,260,6,6,3
+toe_pre_topple_long__toe_E5_C_s01_pre_topple__WY2015__r1,toe_pre_topple_long,toe_E5_C,toe_E5_C_s01_pre_topple,2015,2014-10-02,2015-07-02,274,6,6,3
+toe_pre_topple_post_rain_resume__toe_E5_C_s01_pre_topple__WY2016__r1,toe_pre_topple_post_rain_resume,toe_E5_C,toe_E5_C_s01_pre_topple,2016,2016-01-28,2016-09-30,247,6,6,3

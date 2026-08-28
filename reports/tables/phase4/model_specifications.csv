@@ -1,0 +1,11 @@
+model_id,family,order,seasonal_order,targets,horizons_days,exogenous_feature,complexity_rank,rationale
+zero_change,baseline,not_applicable,not_applicable,mid_E2_B;toe_E5_C,1;2;7,none,1,target-scale no-change reference
+expanding_median,baseline,not_applicable,not_applicable,mid_E2_B;toe_E5_C,1;2;7,none,2,robust expanding historical center
+persistence,baseline,not_applicable,not_applicable,mid_E2_B;toe_E5_C,1;2;7,none,3,last eligible displacement change
+prior_year_same_date,baseline,not_applicable,not_applicable,mid_E2_B;toe_E5_C,1;2;7,none,4,exact prior-calendar-year seasonal reference
+arima_mean,ARIMA,"(0, 0, 0)","(0, 0, 0, 0)",mid_E2_B;toe_E5_C,1;2;7,none,5,white-noise mean model
+arima_ar1,ARIMA,"(1, 0, 0)","(0, 0, 0, 0)",mid_E2_B;toe_E5_C,1;2;7,none,6,parsimonious short-memory model
+arima_ar2,ARIMA,"(2, 0, 0)","(0, 0, 0, 0)",mid_E2_B;toe_E5_C,1;2;7,none,7,limited second-lag model
+arima_arma11,ARIMA,"(1, 0, 1)","(0, 0, 0, 0)",mid_E2_B;toe_E5_C,1;2;7,none,8,limited ARMA alternative
+arima_ar1_weekly,ARIMA,"(1, 0, 0)","(1, 0, 0, 7)",mid_E2_B,1;2;7,none,9,middle weekly-memory sensitivity
+arimax_ar1_rain_lag2,conditional_ARIMAX,"(1,0,0)",none,toe_E5_C,1;2 (7 unavailable by contract),eligible daily interval rain at target lag 2,10,Phase 3 toe rain-to-change association at two days
