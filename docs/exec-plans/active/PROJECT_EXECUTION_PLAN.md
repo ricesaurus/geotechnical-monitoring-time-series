@@ -2,7 +2,7 @@
 
 **Project:** California Landslide Monitoring Time-Series Analysis  
 **Primary intended site:** USGS Cleveland Corral, El Dorado County, California  
-**Active phase:** Phase 4 — analysis complete; publication audit in progress
+**Active phase:** Phase 4 — forecasting, regime analysis, and chronological validation complete
 
 **Last updated:** 2026-08-29
 
@@ -36,7 +36,9 @@ targets `main` from `phase/4-forecasting-validation` and is mergeable. Its first
 check correctly exposed that one committed-artifact test requested ignored local
 Parquet products in a clean checkout; the test now validates committed artifacts only,
 while `scripts/verify_phase4_outputs.py` continues to require all three local processed
-products after a full build. The final remote quality check remains pending.
+products after a full build. Corrected commit
+`372357301e369cb6620a339f514d5da7cc8941b2` is published, and GitHub Actions
+`quality-checks` run `33194308505` completed successfully.
 
 Phase 3 began from verified `main` commit
 `9950009e83fec4d87ccbf814553f80f2be5968ac`, which matched a freshly fetched
@@ -138,7 +140,7 @@ record length, and the engineering question support it.
 - [x] Reusable code, synthetic-fixture tests, deterministic build and validator
   scripts, aggregate-only tables, inspected figures, an executed notebook, report,
   README, data documentation, learning notes, and this plan are complete.
-- [ ] The audited branch is pushed, exactly one verified draft PR targets `main`, and
+- [x] The audited branch is pushed, exactly one verified draft PR targets `main`, and
   the final commit's GitHub Actions result is confirmed successful.
 - [x] Phase 5 has not started.
 
@@ -162,11 +164,14 @@ record length, and the engineering question support it.
 - Produced and validated 15 aggregate-only tables, nine visually inspected figures,
   three ignored processed Parquet products, an executed instructional notebook, a
   report, learning notes, and reusable synthetic-fixture tests.
+- Published the audited branch in verified draft pull request
+  [#4](https://github.com/ricesaurus/geotechnical-monitoring-time-series/pull/4)
+  against `main`; corrected its clean-checkout test boundary and confirmed GitHub
+  Actions `quality-checks` run `33194308505` succeeded.
 
 ## Remaining Phase 4 work
 
-- Publish the CI portability correction and confirm the final GitHub Actions result
-  succeeds on the verified draft pull request.
+None. Stop here; beginning Phase 5 requires a new assignment.
 
 ## Phase 3 acceptance criteria
 
