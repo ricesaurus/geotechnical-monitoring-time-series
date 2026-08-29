@@ -7,6 +7,15 @@ that connects statistical methods to a real geotechnical engineering question. T
 project should be understandable to a civil/geotechnical audience and auditable by a
 technical reader.
 
+## Completion status
+
+All six planned phases are complete. The canonical portfolio deliverable is the
+[final engineering report](../reports/CLEVELAND_CORRAL_FINAL_REPORT.md), supported by a
+validator-backed [claim-and-evidence matrix](../reports/tables/phase5/claim_evidence_matrix.csv),
+executed instructional notebooks, inspected figures, and one top-level reproduction
+route. Completion does not expand the scope: causal identification, operational
+warning, threshold selection, and engineering design remain out of scope.
+
 ## Cleveland Corral context
 
 The intended primary data source is the official USGS Cleveland Corral landslide

@@ -393,3 +393,46 @@ These choices extend the time-series curriculum from description to honest forec
 evaluation: define the information set, compare against meaningful baselines, preserve
 chronology, diagnose uncertainty and failures, and keep statistical evidence separate
 from geotechnical interpretation and speculation.
+
+## Phase 5 — engineering synthesis and reproducible evidence
+
+### A final claim needs a route, not just a citation
+
+The final report is built from verified aggregate artifacts rather than copied notebook
+outputs or recollection. Each important claim has an evidence category, source phase,
+specific artifact and locator, exact reproduction command, and applicable caveat. A
+validator rebuilds the claim text and key forecast values from the Phase 1–4 tables and
+checks that the report contains them. This turns traceability into an executable
+property of the project.
+
+### Negative findings are engineering information
+
+The untouched later forecast result does not justify replacing the frozen models after
+seeing evaluation. Zero change and the expanding median were the lowest-MAE observed
+forecasts across all six long-window target/horizon comparisons. Reporting that result
+shows why a simple benchmark is part of the scientific question: complexity must earn
+its place on future data, not merely fit historical dependence.
+
+### Four evidence categories prevent interpretive drift
+
+Observed data describe released measurements, metadata, gaps, and workflow counts.
+Statistical inference covers estimates whose meaning depends on transformations,
+windows, origins, and uncertainty procedures. Engineering interpretation relates those
+patterns to plausible monitoring behavior while retaining alternatives. Speculation
+and unresolved questions include mechanisms, causes, physical thresholds, and alarm
+rules not identified by this design. Keeping these categories explicit prevents a
+statistically interesting pattern from quietly becoming a safety claim.
+
+### Reproduction has two audiences
+
+A clean-checkout audit must validate committed aggregate evidence without requiring
+large excluded datasets. A full reproduction must separately acquire checksum-verified
+official files, rebuild observation-bearing local layers, rerun every phase, execute
+the notebooks from clean kernels, and regenerate the synthesis. Both routes matter:
+the first supports review and continuous integration, while the second demonstrates
+end-to-end provenance.
+
+The completed learning path now connects time indexing, quality control, decomposition,
+stationarity, ACF/PACF, lag analysis, ARIMA/ARIMAX, chronological validation,
+uncertainty, changepoints, and disciplined engineering communication. The durable
+[learning map](LEARNING_MAP.md) points each topic to its concrete project artifact.

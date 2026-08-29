@@ -2,7 +2,7 @@
 
 **Project:** California Landslide Monitoring Time-Series Analysis  
 **Primary intended site:** USGS Cleveland Corral, El Dorado County, California  
-**Active phase:** Phase 4 — forecasting, regime analysis, and chronological validation complete
+**Active phase:** Project complete — all six phases and GitHub delivery accepted
 
 **Last updated:** 2026-08-29
 
@@ -10,6 +10,29 @@ This is the single source of truth for current execution state. The project scop
 `docs/PROJECT_SPEC.md`; the long-term curriculum is in `docs/LEARNING_ROADMAP.md`.
 
 ## Actual current state
+
+Phase 5 began from verified `main` commit
+`f0d462b6a6cfb747bfb1c93ca5e01b92a4ea2dd1`, which exactly matched a freshly
+fetched `origin/main` with a clean working tree after Phase 4 pull request #4 was
+merged. Before branching, all three preserved raw resources passed SHA-256
+verification; the full Phase 2 workflow reproduced 5,356,490 selected 15-minute rows
+and 78,108 selected daily rows; the full Phase 3 workflow reproduced 97,868 daily
+analysis rows, 3,974 event-match rows, 12 aggregate tables, and nine figures; and the
+full Phase 4 workflow reproduced 10,746 forecast attempts, 6,123 fitted-parameter
+rows, 90 raw changepoint detections, 15 aggregate tables, and nine figures. Every
+Phase 2–4 validator passed, regenerated aggregate tables matched the committed Git
+objects, and all 18 Phase 3–4 figures were visually inspected. Work is isolated on
+`phase/5-engineering-synthesis`. The canonical report, 24-row source-derived claim
+matrix, six-row forecast summary, four Phase 5 aggregate tables, seven-figure report,
+portfolio documentation, single reproduction route, and both clean-kernel notebooks
+now pass local validation. No new scientific analysis, model selection, threshold
+optimization, causal claim, or warning-system design was introduced. Implementation
+commit `dc56097637b77711df2859f7276d118c586dc870` is published in the single
+verified draft pull request
+[#5](https://github.com/ricesaurus/geotechnical-monitoring-time-series/pull/5),
+which targets `main` from `phase/5-engineering-synthesis`. GitHub Actions
+`quality-checks` run `33240205047` completed successfully. All six phases and the
+end-to-end workflow are complete; no next phase remains.
 
 Phase 4 began from verified `main` commit
 `e0ce20b02e16f1c95848417fac34e066b86ef7b7`, which exactly matched a freshly fetched
@@ -120,6 +143,53 @@ verified through the connected GitHub capability, and its `quality-checks` Actio
 
 Optional spectral analysis may be added only in a later assigned phase if sampling,
 record length, and the engineering question support it.
+
+## Phase 5 acceptance criteria
+
+- [x] Phase 4 pull request #4 is merged; freshly fetched `main` exactly matched
+  `origin/main` at `f0d462b6a6cfb747bfb1c93ca5e01b92a4ea2dd1` with a clean tree
+  before branching.
+- [x] All preserved raw resources pass SHA-256 verification, and full Phase 2, Phase 3,
+  and Phase 4 rebuilds reproduce their committed aggregate evidence before synthesis.
+- [x] The final report reuses verified Phase 1–4 evidence without new modeling, tuning,
+  causal identification, physical-threshold selection, or operational-warning design.
+- [x] A programmatically generated claim-and-evidence matrix routes 24 important claims
+  to an exact artifact, locator, reproduction command, evidence category, and caveat.
+- [x] The canonical Markdown report contains all 15 required sections, six verified
+  key forecast rows, and exactly seven curated Phase 3–4 figures. No PDF is committed
+  because the project has no stable PDF-production dependency.
+- [x] The portfolio README, notebook index, data documentation, learning notes,
+  specification, and concise UCLA Statistics 170-style learning map are complete.
+- [x] One top-level PowerShell route supports both full official-source reproduction
+  and committed-artifact audit without exposing observation-bearing files.
+- [x] Both instructional notebooks execute from clean kernels without cell errors, and
+  the report, local links, aggregate safety, and numerical claims pass validation.
+- [x] Ruff, 34 tests, environment verification, raw checksum verification, all Phase
+  2–5 validators, visual review of all 18 source figures, and the tracked-file safety
+  audit pass locally.
+- [x] The audited branch is pushed, exactly one verified draft pull request (#5) targets
+  `main`, and its GitHub Actions `quality-checks` result is confirmed successful.
+- [x] No next phase, deployment activity, alarm design, or engineering design decision
+  has begun.
+
+## Completed Phase 5 work
+
+- Reproduced all prior scientific phases from preserved official data before using any
+  result in the synthesis.
+- Built the canonical engineering report and a validator-backed evidence layer that
+  distinguishes observed data, statistical inference, engineering interpretation, and
+  speculation or unresolved questions.
+- Preserved the central negative forecast result: no frozen dynamic or rain-conditioned
+  candidate added later long-window MAE skill over zero change under the declared
+  design, and no model was reselected after evaluation.
+- Curated seven existing figures rather than generating new scientific outputs, and
+  verified all report links, table values, counts, claims, and notebook executions.
+- Added a reviewer-facing portfolio route, curriculum map, reproduction receipt,
+  software receipt, and full/committed reproduction modes.
+
+## Remaining Phase 5 work
+
+None. Stop here. There is no Phase 6 and no automatically authorized follow-on work.
 
 ## Phase 4 acceptance criteria
 
@@ -388,14 +458,15 @@ None. Stop here; beginning Phase 1 requires a new assignment.
   rare high-movement origins are too few for stable skill claims, and most changepoint
   groups are method-dependent.
 
-## Next phase (not started)
+## Project completion state
 
-Using only verified Phase 1–4 artifacts, synthesize the Cleveland Corral findings into
-a reproducible engineering-facing report that explicitly separates observed data,
-statistical inference, engineering interpretation, and speculation; reconcile the
-negative long-window forecasting result, uncertainty, temporal instability,
-changepoint sensitivity, sensor and missingness limitations, and the exploratory
-rain-response evidence without new model selection, threshold optimization, causal
-claims, or operational-warning recommendations; reproduce and inspect every cited
-table and figure; and stop before any deployment, alarm design, or engineering design
-decision.
+All six planned phases are complete. The end-to-end
+workflow now runs from official-source acquisition and immutable checksums through
+sensor-aware quality control, exploratory dynamics, frozen chronological forecasting,
+and validator-backed engineering synthesis. Phase 5 adds communication and
+traceability only; it does not change the scientific analyses.
+
+No next phase remains. Any future causal study, new monitoring campaign, real-time
+forecasting system, threshold or alarm design, engineering design analysis, or spectral
+extension would be a separately authorized project with a new specification and plan,
+not an automatic continuation of this workflow.

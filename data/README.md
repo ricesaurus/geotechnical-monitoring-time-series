@@ -76,6 +76,22 @@ Reproduce and verify them with:
 ./.venv/Scripts/python.exe ./scripts/verify_phase4_outputs.py
 ```
 
+Phase 5 adds four version-controlled aggregate tables under
+`reports/tables/phase5/`: the claim-and-evidence matrix, six-row forecast decision
+summary, software-version receipt, and full-reproduction count receipt. They contain
+no timestamps, origins, targets, predictions, parameter paths, or measurement values.
+The claim matrix routes final-report statements back to verified Phase 1–4 aggregates;
+it is not a new scientific-analysis layer.
+
+The single top-level route reproduces the complete workflow from the official source:
+
+```powershell
+./scripts/reproduce.ps1 -Mode Full
+```
+
+Clean checkouts without the excluded observation layers can validate all committed
+evidence with `./scripts/reproduce.ps1 -Mode Committed`.
+
 Every downloaded dataset must be accompanied by a versioned provenance record that
 contains at least:
 

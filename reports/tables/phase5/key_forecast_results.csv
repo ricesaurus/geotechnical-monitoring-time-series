@@ -1,0 +1,7 @@
+target_window,window_id,sensor_id,horizon_days,frozen_model,selection_mae_cm_per_day,later_frozen_mae_cm_per_day,later_zero_mae_cm_per_day,later_best_observed_model,later_best_observed_mae_cm_per_day,evaluation_reselected_model
+Middle stable window,middle_stable_2009_2016,mid_E2_B,1,zero_change,0.2525641025641029,0.0563114754098357,0.0563114754098357,expanding_median,0.0563114754098357,False
+Middle stable window,middle_stable_2009_2016,mid_E2_B,2,arima_ar1,0.2132414070380992,0.1139255387786327,0.0695081967213114,expanding_median,0.0695081967213114,False
+Middle stable window,middle_stable_2009_2016,mid_E2_B,7,arima_ar2,0.1415845550332197,0.1051344466865596,0.0694396551724141,expanding_median,0.0694396551724141,False
+Toe pre-topple window,toe_pre_topple_long,toe_E5_C,1,persistence,0.3505154639175257,0.2026315789473684,0.1144736842105263,expanding_median,0.1144736842105263,False
+Toe pre-topple window,toe_pre_topple_long,toe_E5_C,2,arima_arma11,0.3867706199101695,0.200650764046851,0.156578947368421,expanding_median,0.156578947368421,False
+Toe pre-topple window,toe_pre_topple_long,toe_E5_C,7,arima_arma11,0.3225572252230866,0.1535146271069843,0.1145833333333333,expanding_median,0.1145833333333333,False

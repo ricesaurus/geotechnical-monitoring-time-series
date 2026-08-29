@@ -1,0 +1,12 @@
+phase,measure,count,source_layer,verification_status
+Phase 2,selected_15_minute_rows,5356490,git-ignored local Parquet metadata,passed
+Phase 2,selected_daily_rows,78108,git-ignored local Parquet metadata,passed
+Phase 3,daily_analysis_rows,97868,git-ignored local Parquet metadata,passed
+Phase 3,event_match_rows,3974,git-ignored local Parquet metadata,passed
+Phase 4,forecast_attempt_rows,10746,git-ignored local Parquet metadata,passed
+Phase 4,fitted_parameter_rows,6123,git-ignored local Parquet metadata,passed
+Phase 4,raw_changepoint_detection_rows,90,git-ignored local Parquet metadata,passed
+Phase 3,committed_aggregate_tables,12,version-controlled aggregate artifacts,passed
+Phase 3,committed_figures,9,version-controlled curated figures,passed
+Phase 4,committed_aggregate_tables,15,version-controlled aggregate artifacts,passed
+Phase 4,committed_figures,9,version-controlled curated figures,passed
