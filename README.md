@@ -1,124 +1,126 @@
-# California Landslide Monitoring Time-Series Analysis
+# Cleveland Corral landslide monitoring time-series analysis
 
-An end-to-end portfolio project for analyzing official U.S. Geological Survey (USGS)
-monitoring records from the Cleveland Corral landslide near U.S. Highway 50 in El
-Dorado County, California. The intended records include precipitation and snowmelt,
-soil moisture, pore-water pressure or piezometer measurements, and landslide
-displacement.
+A reproducible geotechnical time-series portfolio project built from the official U.S.
+Geological Survey monitoring record for the Cleveland Corral landslide near U.S.
+Highway 50 in El Dorado County, California.
 
-The project has two goals:
+The engineering problem is deceptively simple: determine what the monitored rain,
+soil-moisture, pore-water-pressure, and displacement histories can support about
+temporal response and forecasting. The hard part is preserving sensor regimes,
+missingness, fixed-PST timing, cumulative resets, and forecast-time information while
+resisting causal or operational claims that the observational record cannot justify.
 
-1. Develop a reproducible geotechnical monitoring workflow.
-2. Learn the core ideas of an undergraduate time-series course through a real civil
-   engineering application.
+**Canonical deliverable:** [final engineering report](reports/CLEVELAND_CORRAL_FINAL_REPORT.md)
 
-## Planned analysis
+**Auditable evidence route:** [claim-and-evidence matrix](reports/tables/phase5/claim_evidence_matrix.csv)
 
-- Data ingestion, provenance, and sensor-aware quality control
-- Exploratory time-series analysis and decomposition
-- Stationarity, autocorrelation (ACF), and partial autocorrelation (PACF)
-- Optional frequency-domain and spectral analysis, only if justified by the data and
-  engineering question
-- Lagged cross-correlation between rainfall, pore pressure, soil moisture, and movement
-- ARIMA and ARIMAX models with residual diagnostics
-- Changepoint detection
-- Rolling-origin out-of-sample validation and benchmark comparison
-- Engineering interpretation, limitations, and a reproducible final report
+**Official source:** [USGS DOI 10.5066/P1P9DMFX](https://doi.org/10.5066/P1P9DMFX)
 
-The motivating physical hypothesis is that precipitation or snowmelt may lead to
-infiltration and soil-moisture response, followed by pore-water-pressure response and
-possibly slope-displacement response. The project will test temporal association and
-predictive value; it will not treat correlation, lag structure, or forecast skill as
-proof of causation.
+## What the project found
 
-## Current status
+- Rain has prompt same-day or next-day associations with selected moisture and pressure
+  changes. The long pre-topple toe window also has a modest two-day
+  rain-to-displacement-change association, but middle-site and event-scale timing is
+  weak or unstable.
+- Large naive rain/displacement correlations shrink sharply after valid differencing
+  and cautious prewhitening. Shared accumulation and persistence were important
+  confounders.
+- In all six untouched long-window evaluations, zero change—tied with the expanding
+  median—has the lowest observed MAE. Frozen dynamic and rain-conditioned candidates
+  did not add later forecast skill under the declared design.
+- Prediction intervals are generally conservative, residuals are heavy-tailed, and
+  high-movement evaluation cases are sparse.
+- Only 4 of 42 grouped changepoint candidates have support from both method families.
+  The result is a sensitivity inventory, not a unique physical segmentation.
 
-**Phase 4 — forecasting, regime analysis, and chronological validation complete.** A
-forecasting contract was frozen before comparison. Reusable, tested code now evaluates
-transparent baselines and predeclared ARIMA/ARIMAX candidates at fixed rolling origins,
-with forecast-time feature controls, common-origin uncertainty, interval and residual
-diagnostics, explicit failures, coefficient stability, and separate changepoint
-sensitivity. The central later-evaluation result is negative: zero change, tied with
-the expanding median, has the lowest observed MAE for both displacement targets at all
-three horizons. Fifteen aggregate-only tables, nine inspected figures, and an executed
-restart-and-run notebook reproduce the findings without committing observation rows.
-No model was reselected after evaluation, and no causal, threshold, warning, or design
-claim is made. See the
-[Phase 4 forecasting report](docs/CLEVELAND_CORRAL_PHASE4_FORECASTING_VALIDATION.md),
-the [frozen contract](docs/phase4/FORECASTING_CONTRACT.md), and the
-[active execution plan](docs/exec-plans/active/PROJECT_EXECUTION_PLAN.md).
+![Later rolling-origin MAE by model and horizon](reports/figures/phase4/01_validation_mae.png)
 
-## Quick start on Windows
+These are statements about observed records, statistical association, and forecast
+performance under a fixed design. They do not establish an infiltration mechanism,
+physical threshold, operational warning skill, alarm rule, or design recommendation.
 
-From PowerShell in the project folder:
+## Reproducible workflow
+
+The repository follows one traceable route:
+
+```text
+official USGS files
+  → immutable raw layer and checksums
+  → sensor-aware, quality-flagged interim data
+  → exploratory and lag diagnostics
+  → frozen chronological forecast evaluation
+  → validator-backed engineering synthesis
+```
+
+Raw and observation-level derived data stay outside Git. Version control contains
+source metadata, checksums, reusable code, tests, aggregate tables, inspected figures,
+executed notebooks, and the final report.
+
+For a fast clean-checkout audit on Windows:
 
 ```powershell
 ./scripts/setup.ps1
-./scripts/check.ps1
+./scripts/reproduce.ps1 -Mode Committed
 ```
 
-After setup, reproduce the local Phase 2 data layers from the official release:
+For the full public-source reproduction, including acquisition, SHA-256 verification,
+Phases 2–4 rebuilds, Phase 5 synthesis, and clean-kernel notebook execution:
 
 ```powershell
-./.venv/Scripts/python.exe ./scripts/acquire_cleveland_corral.py
-./.venv/Scripts/python.exe ./scripts/inspect_cleveland_corral_archives.py
-./.venv/Scripts/python.exe ./scripts/build_phase2_interim.py
-./.venv/Scripts/python.exe ./scripts/verify_phase2_data.py
+./scripts/setup.ps1
+./scripts/reproduce.ps1 -Mode Full
 ```
 
-Then reproduce and verify Phase 3:
+The rolling forecast rebuild can take several minutes. VS Code is optional; the
+workflow runs from PowerShell in the project folder.
 
-```powershell
-./.venv/Scripts/python.exe ./scripts/build_phase3_analysis.py
-./.venv/Scripts/python.exe ./scripts/verify_phase3_outputs.py
-```
+## Portfolio navigation
 
-Then reproduce and verify Phase 4 (the rolling fits can take several minutes):
-
-```powershell
-./.venv/Scripts/python.exe ./scripts/build_phase4_analysis.py
-./.venv/Scripts/python.exe ./scripts/verify_phase4_outputs.py
-```
-
-Activate the environment for an interactive session:
-
-```powershell
-./.venv/Scripts/Activate.ps1
-```
-
-Then open the folder in VS Code if desired:
-
-```powershell
-code .
-```
-
-VS Code is optional. The code and environment live in this folder; GitHub stores a
-versioned copy of committed files.
+- [Final engineering report](reports/CLEVELAND_CORRAL_FINAL_REPORT.md): concise answer
+  to the four engineering questions, with evidence categories and limitations.
+- [Phase 1 source audit](docs/data/CLEVELAND_CORRAL_SOURCE_AUDIT.md): official sources,
+  sensor inventory, compatibility, and initial viability decision.
+- [Phase 2 ingestion and QC report](docs/data/CLEVELAND_CORRAL_PHASE2_INGESTION_QC.md):
+  immutable acquisition, parsing, semantics, quality flags, and sensor selection.
+- [Phase 3 exploratory report](docs/CLEVELAND_CORRAL_PHASE3_EXPLORATORY_DYNAMICS.md):
+  coverage, decomposition, stationarity, ACF/PACF, and lag relationships.
+- [Phase 4 forecast report](docs/CLEVELAND_CORRAL_PHASE4_FORECASTING_VALIDATION.md) and
+  [frozen contract](docs/phase4/FORECASTING_CONTRACT.md): models, information sets,
+  chronological evaluation, uncertainty, residuals, and changepoints.
+- [Instructional notebooks](notebooks/README.md): the two executed, restart-and-run
+  narratives for Phases 3 and 4.
+- [Learning map](docs/LEARNING_MAP.md): UCLA Statistics 170-style topics mapped to
+  concrete project artifacts and geotechnical meaning.
+- [Active execution plan](docs/exec-plans/active/PROJECT_EXECUTION_PLAN.md): complete
+  phase history, acceptance evidence, and durable unresolved questions.
 
 ## Repository layout
 
 ```text
-data/                  Local data layers and version-controlled provenance metadata
-docs/                  Specification, active plan, and learning records
-notebooks/             Numbered exploratory and instructional notebooks
-reports/figures/       Curated figures suitable for the final report
-scripts/               Repeatable setup and quality-check commands
-src/geotech_ts/        Reusable analysis code
-tests/                  Automated tests
+data/                  Local data layers and committed provenance metadata
+docs/                  Phase reports, specification, plan, and learning records
+notebooks/             Executed instructional notebooks
+reports/figures/       Curated Phase 3 and Phase 4 figures
+reports/tables/        Aggregate evidence only, including Phase 5 claim routes
+scripts/               Setup, reproduction, build, and verification commands
+src/geotech_ts/        Tested reusable ingestion and analysis logic
+tests/                  Synthetic and committed-artifact checks
 ```
 
-Raw and derived datasets are intentionally excluded from Git. Download scripts,
-source URLs, metadata, and small documentation files will be versioned so that the
-analysis remains reproducible without committing bulky or mutable data.
+## Reproducibility and safety boundary
 
-## Reproducibility rule
+Every numerical claim in the final report is checked against committed aggregate
+artifacts generated by the Phase 2–4 code. Raw files are preserved exactly as obtained;
+corrections and transformations occur only in derived layers. Validation is
+chronological, preprocessing respects forecast origins, and unavailable future rain is
+never inserted into a forecast.
 
-Every result in the final report should be regenerable from a documented public data
-source by running code in this repository. Manual spreadsheet edits are not part of
-the analysis pipeline. Raw data remain immutable, time-series validation remains
-chronological, and future observations must never leak into training or preprocessing.
+This project is educational and retrospective. It is not a real-time monitoring
+system, safety-critical decision tool, causal study, alarm design, or geotechnical
+design analysis.
 
 ## License
 
-Code in this repository is released under the [MIT License](LICENSE). USGS data retain
-their original terms and attribution.
+Code is released under the [MIT License](LICENSE). USGS data retain their source terms
+and attribution; the release manifest records the applicable CC0/public-domain
+dedication.

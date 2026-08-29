@@ -1,34 +1,31 @@
-# Notebooks
+# Instructional notebooks
 
-Number notebooks in the order a reader should follow them:
+The repository contains two executed, restart-and-run notebooks. Their numbers follow
+the project phases rather than a one-notebook-per-topic syllabus:
 
-```text
-00_environment_and_data_inventory.ipynb
-01_quality_control.ipynb
-02_exploratory_analysis.ipynb
-03_decomposition_stationarity.ipynb
-04_acf_pacf_linear_processes.ipynb
-05_spectral_analysis.ipynb  # optional; create only if justified
-06_lagged_cross_correlation.ipynb
-07_arima_arimax.ipynb
-08_changepoints.ipynb
-09_rolling_validation.ipynb
-10_engineering_synthesis.ipynb
+1. [`02_phase3_exploratory_dynamics.ipynb`](02_phase3_exploratory_dynamics.ipynb)
+   covers coverage and missingness, transformations, robust decomposition,
+   stationarity, ACF/PACF, synthetic linear-process examples, daily lag analysis, and
+   event-alignment sensitivity.
+2. [`03_phase4_forecasting_validation.ipynb`](03_phase4_forecasting_validation.ipynb)
+   covers the frozen forecasting design, baselines, ARIMA/ARIMAX comparisons,
+   forecast-time feature availability, rolling-origin uncertainty, intervals,
+   residuals, coefficient paths, changepoints, and a synthetic leakage demonstration.
+
+Both notebooks display aggregate evidence and call reusable logic in `src/geotech_ts/`.
+Observation-bearing rolling forecasts and event matches remain in Git-ignored local
+data layers. Phase 5 adds no new analysis notebook: the
+[final engineering report](../reports/CLEVELAND_CORRAL_FINAL_REPORT.md) is the canonical
+synthesis, and the [learning map](../docs/LEARNING_MAP.md) connects its evidence to the
+curriculum.
+
+Execute clean verification copies with:
+
+```powershell
+./.venv/Scripts/python.exe ./scripts/execute_notebooks.py
 ```
 
-Notebooks should explain decisions and show results. Reusable ingestion, quality-control,
-modeling, and validation logic belongs in `src/geotech_ts/`, where it can be tested.
-The sequence is a long-term outline, not a signal to create notebooks before their
-assigned phase.
-
-Phase 3 uses one restart-and-run notebook,
-`02_phase3_exploratory_dynamics.ipynb`, to orchestrate and explain the reusable Phase 3
-build. It covers the exploratory, decomposition/stationarity, ACF/PACF, and lagged
-cross-correlation topics together so masks and sign conventions remain consistent.
-
-Phase 4 uses one executed restart-and-run notebook,
-`03_phase4_forecasting_validation.ipynb`, to explain the frozen chronological design,
-baseline and ARIMA/ARIMAX comparisons, forecast-time availability, prediction
-intervals, residual and coefficient diagnostics, changepoint sensitivity, and the
-synthetic leakage demonstration. It displays aggregate outputs; reusable logic and
-observation-bearing rolling results remain outside the notebook.
+The copies are written under the ignored `data/processed/` layer. Maintainers can use
+`--in-place` when deliberately refreshing the committed executed notebooks. Notebook
+execution fails on any cell error; analysis logic, validation, and tests remain outside
+the notebooks so they are independently auditable.
