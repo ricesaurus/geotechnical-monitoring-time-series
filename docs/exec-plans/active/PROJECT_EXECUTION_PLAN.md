@@ -2,7 +2,7 @@
 
 **Project:** California Landslide Monitoring Time-Series Analysis  
 **Primary intended site:** USGS Cleveland Corral, El Dorado County, California  
-**Active phase:** Phase 5 — engineering synthesis complete; GitHub release audit in progress
+**Active phase:** Project complete — all six phases and GitHub delivery accepted
 
 **Last updated:** 2026-08-29
 
@@ -26,8 +26,13 @@ objects, and all 18 Phase 3–4 figures were visually inspected. Work is isolate
 matrix, six-row forecast summary, four Phase 5 aggregate tables, seven-figure report,
 portfolio documentation, single reproduction route, and both clean-kernel notebooks
 now pass local validation. No new scientific analysis, model selection, threshold
-optimization, causal claim, or warning-system design was introduced. Branch
-publication, one draft pull request, and final GitHub Actions confirmation remain.
+optimization, causal claim, or warning-system design was introduced. Implementation
+commit `dc56097637b77711df2859f7276d118c586dc870` is published in the single
+verified draft pull request
+[#5](https://github.com/ricesaurus/geotechnical-monitoring-time-series/pull/5),
+which targets `main` from `phase/5-engineering-synthesis`. GitHub Actions
+`quality-checks` run `33240205047` completed successfully. All six phases and the
+end-to-end workflow are complete; no next phase remains.
 
 Phase 4 began from verified `main` commit
 `e0ce20b02e16f1c95848417fac34e066b86ef7b7`, which exactly matched a freshly fetched
@@ -162,8 +167,8 @@ record length, and the engineering question support it.
 - [x] Ruff, 34 tests, environment verification, raw checksum verification, all Phase
   2–5 validators, visual review of all 18 source figures, and the tracked-file safety
   audit pass locally.
-- [ ] The audited branch is pushed, exactly one verified draft pull request targets
-  `main`, and the final commit's GitHub Actions result is confirmed successful.
+- [x] The audited branch is pushed, exactly one verified draft pull request (#5) targets
+  `main`, and its GitHub Actions `quality-checks` result is confirmed successful.
 - [x] No next phase, deployment activity, alarm design, or engineering design decision
   has begun.
 
@@ -184,8 +189,7 @@ record length, and the engineering question support it.
 
 ## Remaining Phase 5 work
 
-Publish the audited branch, open exactly one draft pull request, confirm its final
-GitHub Actions result, record that delivery here, and stop. There is no Phase 6.
+None. Stop here. There is no Phase 6 and no automatically authorized follow-on work.
 
 ## Phase 4 acceptance criteria
 
@@ -456,7 +460,7 @@ None. Stop here; beginning Phase 1 requires a new assignment.
 
 ## Project completion state
 
-All six planned phases are complete at the local validation boundary. The end-to-end
+All six planned phases are complete. The end-to-end
 workflow now runs from official-source acquisition and immutable checksums through
 sensor-aware quality control, exploratory dynamics, frozen chronological forecasting,
 and validator-backed engineering synthesis. Phase 5 adds communication and
